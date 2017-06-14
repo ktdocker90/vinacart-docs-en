@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# vinacart help documentation build configuration file, created by
-# sphinx-quickstart on Sat Jan 14 09:07:50 2017.
+# test documentation build configuration file, created by
+# sphinx-quickstart on Tue Nov 29 11:53:05 2016.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -12,6 +12,11 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
+import sys
+import os
+import shlex
+from recommonmark.parser import CommonMarkParser
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -19,11 +24,6 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-import sys
-import os
-import shlex
-from recommonmark.parser import CommonMarkParser
-
 
 # -- General configuration ------------------------------------------------
 
@@ -53,9 +53,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'vinacart help'
-copyright = u'2017, Mr.Quang'
-author = u'Mr.Quang'
+project = u'Vinacart Docs'
+copyright = u'2016, VinaCart'
+author = u'VinaCart'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -71,7 +71,11 @@ release = u'1.0'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = 'vi'
+language = 'en' #None
+
+locale_dirs = ['locale/']
+# New in version 1.1
+gettext_compact = True
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
@@ -124,7 +128,7 @@ todo_include_todos = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'theme-solar'
+html_theme = 'alabaster'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -132,13 +136,13 @@ html_theme = 'theme-solar'
 #
 # html_theme_options = {}
 
-# Add any paths that contain custom themes here, relative to this directory. ie: _themes/solar
-html_theme_path = ["_themes/theme-solar"]
+# Add any paths that contain custom themes here, relative to this directory.
+html_theme_path = []
 
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
 #
-# html_title = u'vinacart help v1.0'
+# html_title = u'test v1'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #
@@ -224,7 +228,7 @@ html_static_path = ['_static']
 #   'da', 'de', 'en', 'es', 'fi', 'fr', 'hu', 'it', 'ja'
 #   'nl', 'no', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'
 #
-html_search_language = 'vi'
+# html_search_language = 'en'
 
 # A dictionary with options for the search language support, empty by default.
 # 'ja' uses this config value.
@@ -238,7 +242,7 @@ html_search_language = 'vi'
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'vinacarthelpdoc'
+htmlhelp_basename = 'vinacartdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -264,8 +268,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'vinacarthelp.tex', u'vinacart help Documentation',
-     u'Mr.Quang', 'manual'),
+    (master_doc, 'vinacart.tex', u'Vinacart Documentation',
+     u'VinaCart', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -306,7 +310,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'vinacarthelp', u'vinacart help Documentation',
+    (master_doc, 'Vinacart', u'Vinacart Documentation',
      [author], 1)
 ]
 
@@ -321,8 +325,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'vinacarthelp', u'vinacart help Documentation',
-     author, 'vinacarthelp', 'One line description of project.',
+    (master_doc, 'Vinacart', u'Vinacart Documentation',
+     author, 'Vinacart', 'One line description of project.',
      'Miscellaneous'),
 ]
 
@@ -358,15 +362,7 @@ html_context = {
 import sphinx_rtd_theme
 html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
-#import sphinx_bootstrap_theme
-#html_theme = "bootstrap"
-#html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
-
-#html_theme = "theme-solar"
-#html_theme_path = ["_themes/theme-solar"]
-
-
+    
 # Set up PHP syntax highlights
 from sphinx.highlighting import lexers
 from pygments.lexers.web import PhpLexer

@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Vinacart Installation &mdash; Vinacart Docs 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Vinacart Docs 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Cấu trúc theme" href="vinacart-theme-structure.html"/>
+        <link rel="prev" title="Vinacart development theme" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Vinacart Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Vinacart Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#server-configuration">Server Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install">Install</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Cấu trúc theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-start.html">Getting start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theme-config.html">Cấu hình theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global-config.html">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build-tool.html">Build theme automation tool</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Vinacart Docs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Vinacart Installation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/cai-dat-vinacart.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="vinacart-installation">
+<h1>Vinacart Installation<a class="headerlink" href="#vinacart-installation" title="Permalink to this headline">¶</a></h1>
+<p>Download Vinacart: <a class="reference external" href="http://www.vinacart.net/p/download.html">http://www.vinacart.net/p/download.html</a></p>
+<div class="section" id="server-configuration">
+<h2>Server Configuration<a class="headerlink" href="#server-configuration" title="Permalink to this headline">¶</a></h2>
+<p><strong>Apache</strong>: Required modules &amp; extension as bellow:</p>
+<p>PHP version 5.6+</p>
+<ul>
+<li><p class="first"><em>Module</em>: mod_rewrite</p>
+</li>
+<li><dl class="first docutils">
+<dt><em>Extension</em>:</dt>
+<dd><ul class="first last simple">
+<li>mysql|mysqli|pdo_mysql : Original MySQL API</li>
+<li>gd : a graphics library used to manipulate images</li>
+<li>curl : client for URL handling used by GPM</li>
+<li>zlib : read and write gzip (.gz) compressed files</li>
+<li>mbstring : multibyte encoding</li>
+<li>mcrypt : mcrypt library</li>
+<li>pcntl : Process Control support signal handling and process termination</li>
+<li>openssl : encrypting &amp; decrypting data</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Note: LiteSpeed Web Server not support.</p>
+</div>
+<div class="section" id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Prepare Domain.</li>
+</ol>
+<p>If run on localhost, you using xampp, wamp.. you need to create an alias (ie: <code class="docutils literal"><span class="pre">vinacart.dev</span></code>) instead of using default hostname <code class="docutils literal"><span class="pre">localhost</span></code>. Example:
+Edit file <cite>c:/xampp/conf/extra/httpd-vhosts.conf</cite></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">VirtualHost</span> <span class="o">*</span><span class="p">:</span><span class="mi">80</span><span class="o">&gt;</span>
+    <span class="n">ServerName</span> <span class="n">vinacart</span><span class="o">.</span><span class="n">dev</span>
+    <span class="n">ServerAlias</span> <span class="n">www</span><span class="o">.</span><span class="n">vinacart</span><span class="o">.</span><span class="n">dev</span>
+    <span class="n">DocumentRoot</span> <span class="s2">&quot;C:\xampp\htdocs</span><span class="se">\v</span><span class="s2">inacart&quot;</span>
+    <span class="o">&lt;</span><span class="n">Directory</span> <span class="s2">&quot;C:\xampp\htdocs</span><span class="se">\v</span><span class="s2">inacart&quot;</span><span class="o">&gt;</span>
+        <span class="n">Order</span> <span class="n">allow</span><span class="p">,</span><span class="n">deny</span>
+        <span class="n">Allow</span> <span class="kn">from</span> <span class="nn">all</span>
+    <span class="o">&lt;/</span><span class="n">Directory</span><span class="o">&gt;</span>
+        <span class="n">ErrorLog</span> <span class="n">C</span><span class="p">:</span>\<span class="n">xampp</span>\<span class="n">htdocs</span>\<span class="n">error</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">&lt;/</span><span class="n">VirtualHost</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Create database.</li>
+<li>Set Files permission.</li>
+</ol>
+<p>For Window users, this step is no need.
+For Linux users, to chmod all files we just run <em>caidat.php</em> on your browser:
+<code class="docutils literal"><span class="pre">http://vinacart.dev/caidat.php</span></code></p>
+<ol class="arabic simple" start="4">
+<li>Install.</li>
+</ol>
+<p>Open your browser, visit the page: <code class="docutils literal"><span class="pre">http://vinacart.dev/install/</span></code>
+Follow the sequence of steps (wizard). Fill in the full information and then click install, wait a few minutes for the installer to finish.</p>
+<p>Note: If you want to reinstall vinacart, use the following URL: <code class="docutils literal"><span class="pre">http://vinacart.dev/install/?rt=install&amp;force=1</span></code></p>
+<p><strong>Using prefix www</strong></p>
+<p>If you want to use the www prefix, and redirect the URL to this subdomain after the installation is complete, visit the admin page to modify the store path. Ex: <a class="reference external" href="http://www.example.com">http://www.example.com</a></p>
+<p><em>Note</em>: You need to clear the cache and disable the cache if the URL does not work correctly. If the URL is already worked, you can enable the cache again.</p>
+<p>At this point the admin still works with the old URL (without www), however, so that the storefront and admin automatically redirect to www when the user types your domain does not contain www. You add the following to the .htaccess file</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>..
+RewriteRule ^(.*)\?*$ index.php?_route_=$1 [L,QSA]
+
+# if want to redirect non-www to www
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,QSA]
+..
+</pre></div>
+</div>
+<p>If you create multiple stores with the same domain, (eg, store2.example.com), list them in the black list so that www is properly redirected.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteCond %{HTTP_HOST} !^store2\. [NC]
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,QSA]
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="vinacart-theme-structure.html" class="btn btn-neutral float-right" title="Cấu trúc theme" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Vinacart development theme" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, VinaCart.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

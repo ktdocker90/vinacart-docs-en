@@ -1,0 +1,413 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sử dụng layout blocks &mdash; Vinacart Docs 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Vinacart Docs 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Template" href="template.html"/>
+        <link rel="prev" title="General" href="global-config.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Vinacart Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="cai-dat-vinacart.html">Vinacart Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Cấu trúc theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-start.html">Getting start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theme-config.html">Cấu hình theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global-config.html">General</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sử dụng layout blocks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tuy-chinh-giao-dien-block">Tùy chỉnh giao diện block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assets">Assets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build-tool.html">Build theme automation tool</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Vinacart Docs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Sử dụng layout blocks</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/intro-layout-blocks.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="su-dung-layout-blocks">
+<h1>Sử dụng layout blocks<a class="headerlink" href="#su-dung-layout-blocks" title="Permalink to this headline">¶</a></h1>
+<p>Danh sách blocks bạn có thể sử dụng:</p>
+<ul class="simple">
+<li>customer</li>
+<li>menu</li>
+<li>search</li>
+<li>language</li>
+<li>currency</li>
+<li>cart</li>
+<li>category</li>
+<li>breadcrumbs</li>
+<li>account</li>
+<li>newsletter_signup</li>
+<li>credit_cards</li>
+<li>special</li>
+<li>featured</li>
+<li>bestsellers</li>
+<li>chat_block</li>
+<li>html_block</li>
+<li>custom_form_block</li>
+<li>banner_block</li>
+<li>listing_block
+..</li>
+</ul>
+<div class="section" id="tuy-chinh-giao-dien-block">
+<h2>Tùy chỉnh giao diện block<a class="headerlink" href="#tuy-chinh-giao-dien-block" title="Permalink to this headline">¶</a></h2>
+<p>Hiện tại áp dụng cho 2 block <code class="docutils literal"><span class="pre">listing_data</span></code> &amp; <code class="docutils literal"><span class="pre">banner_block</span></code>. Tùy chỉnh giao diện block cho phép chúng ta đưa thêm trường vào trang edit block và sử dụng các thư viện jquery theo ý muốn.</p>
+<p>Chúng tôi đưa sẵn các thư viện javascript đáp ứng nhu cầu làm theme phong phú, để nạp một thư viện nào đó bạn chỉ cần khai báo bởi tên. Điều này tránh trùng lặp thư viện bạn chèn vào site.</p>
+<p>Mỗi file .tpl có một file cấu hình cùng tên có định dạng .xml và nằm cùng thư mục với file template .tpl đó. VD: ta có file <code class="docutils literal"><span class="pre">blocks/listing_block/main_categories.tpl</span></code> tương ứng với file cấu hình <code class="docutils literal"><span class="pre">blocks/listing_block/main_categories.xml</span></code></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;block_config&gt;
+    &lt;name&gt;test 4&lt;/name&gt;
+    &lt;description&gt;&lt;![CDATA[test 3 description]]&gt;&lt;/description&gt;
+    &lt;author&gt;&lt;![CDATA[Hoang]]&gt;&lt;/author&gt;
+
+    &lt;preview&gt;&lt;![CDATA[images/test.jpg]]&gt;&lt;/preview&gt;&lt;!-- inside image folder --&gt;
+    &lt;help&gt;&lt;![CDATA[Help content]]&gt;&lt;/help&gt;
+
+    &lt;!-- options, inherit from extension configuration file --&gt;
+    &lt;options&gt;
+        &lt;item name=&quot;field-1&quot;&gt;
+            &lt;type&gt;selectbox&lt;/type&gt;
+            &lt;title&gt;&lt;![CDATA[test_4-field1]]&gt;&lt;/title&gt;
+            &lt;desc&gt;&lt;![CDATA[4e9750345urjglflfhfghf;e057435]]&gt;&lt;/desc&gt;
+            &lt;attributes&gt;&lt;![CDATA[style=&quot;border:1px solid red&quot;]]&gt;&lt;/attributes&gt;
+            &lt;default_value&gt;bestsellers&lt;/default_value&gt;
+            &lt;variants&gt;
+                &lt;_AI_&gt;bestsellers&lt;/_AI_&gt;
+                &lt;_AI_&gt;latest&lt;/_AI_&gt;
+                &lt;_AI_&gt;specials&lt;/_AI_&gt;
+                &lt;_AI_&gt;featured&lt;/_AI_&gt;
+            &lt;/variants&gt;
+        &lt;/item&gt;
+        &lt;item name=&quot;field-2&quot;&gt;
+            &lt;type&gt;checkbox&lt;/type&gt;
+            &lt;default_value&gt;0&lt;/default_value&gt;
+        &lt;/item&gt;
+                ...
+    &lt;/options&gt;
+
+    &lt;!-- theme setting --&gt;
+    &lt;settings&gt;
+        &lt;item&gt;
+            &lt;type&gt;js_libs&lt;/type&gt;
+            &lt;data&gt;
+                &lt;_AI_&gt;&lt;![CDATA[marquee/endless-div-scroll]]&gt;&lt;/_AI_&gt;
+            &lt;/data&gt;
+        &lt;/item&gt;
+
+        &lt;item&gt;
+            &lt;type&gt;styles&lt;/type&gt;
+            &lt;data&gt;
+                &lt;_AI_&gt;&lt;![CDATA[style.css]]&gt;]&lt;/_AI_&gt;
+            &lt;/data&gt;
+        &lt;/item&gt;
+        &lt;item&gt;
+            &lt;type&gt;scripts&lt;/type&gt;
+            &lt;data&gt;
+                &lt;_AI_&gt;&lt;![CDATA[js.js]]&gt;]&lt;/_AI_&gt;
+            &lt;/data&gt;
+        &lt;/item&gt;
+
+    &lt;/settings&gt;
+&lt;/block_config&gt;
+</pre></div>
+</div>
+<p>Thẻ <code class="docutils literal"><span class="pre">&lt;name</span></code>, <code class="docutils literal"><span class="pre">&lt;description</span></code>, <code class="docutils literal"><span class="pre">&lt;author</span></code>, <code class="docutils literal"><span class="pre">&lt;preview</span></code>, <code class="docutils literal"><span class="pre">&lt;help</span></code> hiển thị thông tin về block template. Ở trang sửa nội dung block, bạn sẽ nhìn thấy thông tin giao diện được tìm thấy.</p>
+<img alt="_images/vnc-block-template.png" src="_images/vnc-block-template.png" />
+</div>
+<div class="section" id="assets">
+<h2>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h2>
+<p>Khai báo sử dụng thêm .css, .js và thư viện javascript khi block được load trong site. Bạn viết trong thẻ <code class="docutils literal"><span class="pre">&lt;scripts</span></code>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;!-- theme setting --&gt;
+&lt;settings&gt;
+        &lt;item&gt;
+                &lt;type&gt;js_libs&lt;/type&gt;
+                &lt;data&gt;
+                        &lt;_AI_&gt;&lt;![CDATA[marquee/endless-div-scroll]]&gt;&lt;/_AI_&gt;
+                &lt;/data&gt;
+        &lt;/item&gt;
+
+        &lt;item&gt;
+                &lt;type&gt;styles&lt;/type&gt;
+                &lt;data&gt;
+                        &lt;_AI_&gt;&lt;![CDATA[style.css]]&gt;]&lt;/_AI_&gt;
+                &lt;/data&gt;
+        &lt;/item&gt;
+        &lt;item&gt;
+                &lt;type&gt;scripts&lt;/type&gt;
+                &lt;data&gt;
+                        &lt;_AI_&gt;&lt;![CDATA[js.js]]&gt;]&lt;/_AI_&gt;
+                &lt;/data&gt;
+        &lt;/item&gt;
+
+&lt;/settings&gt;
+</pre></div>
+</div>
+<p>Chú ý: đường dẫn file tương tự như file cấu hình theme <a class="reference external" href="theme-config.html">theme.xml</a>
+Một số thư viện hay sử dụng:</p>
+<ul class="simple">
+<li>Background effects:<ul>
+<li><code class="docutils literal"><span class="pre">bg-effects/snow</span></code></li>
+<li><code class="docutils literal"><span class="pre">bg-effects/FireWorksNewYear</span></code></li>
+</ul>
+</li>
+<li>Galleries<ul>
+<li><code class="docutils literal"><span class="pre">galleries/jgallery</span></code></li>
+<li><code class="docutils literal"><span class="pre">galleries/photor</span></code></li>
+<li>...</li>
+</ul>
+</li>
+</ul>
+<p>Tương tự, nếu bạn muốn bổ xung file của thư viện, khai báo đầy đủ như sau:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;item&gt;
+        &lt;type&gt;js_libs&lt;/type&gt;
+        &lt;data&gt;
+                &lt;_AI_&gt;
+                        &lt;param name=&quot;name&quot;&gt;&lt;![CDATA[sliders/nivoSlider]]&gt;&lt;/param&gt;
+                        &lt;!-- mỗi file cách nhau dấu | --&gt;
+        &lt;param name=&quot;styles&quot;&gt;&lt;![CDATA[light.css]]&gt;&lt;/param&gt;
+                &lt;/_AI_&gt;
+        &lt;/data&gt;
+&lt;/item&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p>Để đưa thêm option cho block, bạn khai báo trong thẻ <code class="docutils literal"><span class="pre">&lt;options</span></code>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;options&gt;
+        &lt;item name=&quot;f1&quot;&gt;
+                &lt;type&gt;selectbox&lt;/type&gt;
+                &lt;title&gt;&lt;![CDATA[test_4-field1]]&gt;&lt;/title&gt;
+                &lt;desc&gt;&lt;![CDATA[4e9750345urjglflfhfghf;e057435]]&gt;&lt;/desc&gt;
+                &lt;attributes&gt;&lt;![CDATA[style=&quot;border:1px solid red&quot;]]&gt;&lt;/attributes&gt;
+                &lt;default_value&gt;bestsellers&lt;/default_value&gt;
+                &lt;variants&gt;
+                        &lt;_AI_&gt;bestsellers&lt;/_AI_&gt;
+                        &lt;_AI_&gt;latest&lt;/_AI_&gt;
+                        &lt;_AI_&gt;specials&lt;/_AI_&gt;
+                        &lt;_AI_&gt;featured&lt;/_AI_&gt;
+                &lt;/variants&gt;
+        &lt;/item&gt;
+        &lt;item name=&quot;f2&quot;&gt;
+                &lt;type&gt;checkbox&lt;/type&gt;
+                &lt;default_value&gt;0&lt;/default_value&gt;
+        &lt;/item&gt;
+        &lt;item name=&quot;f3&quot;&gt;
+                &lt;type&gt;input&lt;/type&gt;
+        &lt;default_value&gt;&lt;![CDATA[.next]]&gt;&lt;/default_value&gt;
+        &lt;/item&gt;
+&lt;/options&gt;
+</pre></div>
+</div>
+<p>Nếu bạn khai báo sử dụng thư viện, các thư viện có thể có thêm options sẽ được bổ xung vào các trường bạn đã khai báo ở trên. Chú ý: chỉ lấy options của thư viện đầu tiên.</p>
+<p><strong>Sử dụng trong .tpl</strong></p>
+<p>Giá trị options bạn lưu với block, lưu trong biến <code class="docutils literal"><span class="pre">$options</span></code>. Chẳng hạn bạn có thể sử dụng options để tùy chỉnh thư viện jquery.</p>
+<p><em>PHP</em>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+    <span class="err">$</span><span class="p">(</span><span class="nx">window</span><span class="p">)</span><span class="o">.</span><span class="nx">load</span><span class="p">(</span><span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="err">$</span><span class="p">(</span><span class="s2">&quot;#brand_carousal&quot;</span><span class="p">)</span><span class="o">.</span><span class="nx">endlessScroll</span><span class="p">(</span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">HW_SKIN_Option</span><span class="o">::</span><span class="na">build_json_options</span><span class="p">(</span><span class="nv">$options</span><span class="p">)</span><span class="cp">?&gt;</span><span class="x">);</span>
+
+<span class="x">        // Recopy the previous line to add scrolling to other divs.</span>
+<span class="x">    });</span>
+<span class="x">&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p><em>Template engine</em>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+    <span class="err">$</span><span class="p">(</span><span class="nx">window</span><span class="p">)</span><span class="o">.</span><span class="nx">load</span><span class="p">(</span><span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nx">options</span><span class="o">=</span><span class="p">{{</span> <span class="nx">staticCall</span><span class="p">(</span><span class="s1">&#39;HW_SKIN_Option&#39;</span><span class="p">,</span><span class="s1">&#39;build_json_options&#39;</span><span class="p">,</span><span class="nx">options</span><span class="p">)</span> <span class="p">}};</span>
+        <span class="err">$</span><span class="p">(</span><span class="s2">&quot;#brand_carousal&quot;</span><span class="p">)</span><span class="o">.</span><span class="nx">endlessScroll</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="o">&lt;/</span><span class="nx">script</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="template.html" class="btn btn-neutral float-right" title="Template" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="global-config.html" class="btn btn-neutral" title="General" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, VinaCart.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

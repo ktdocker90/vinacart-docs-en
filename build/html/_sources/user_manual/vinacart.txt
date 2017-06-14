@@ -1,0 +1,69 @@
+=========================
+Vinacart (Theme Framework)
+=========================
+
+Required PHP 5.6+
+
+Featured
+^^^^^^^^
+
+- add more buttons in tinymce editor.
+- add relation products base on category
+- quick print in invoice page
+- modify system hooks in some files.
+- custom admin logo.
+- HTML Meta Code
+- add main_menu with item contain any block
+- twig engine for template
+- clone layout featured
+- advanced theme customizing with flexible theme options
+- import & export for theme data only
+- built in block with JS library option
+- add blocks: viewed_products, offers,main_menu
+- product special countdown, viewed products, refine search
+- share buttons, facebook meta tags
+- suffix URL, rich snippets, google site map
+- bulk generate SEO url,  redirect 301, URLs alias manager
+- repairing tools
+- clean checkout page interface
+
+Screenshot
+^^^^^^^^^^
+
+**Main menu**
+
+.. image:: ../images/extensions/main_menu.png
+
+**Blocks with lib options**
+
+.. image:: ../images/extensions/block_lib_option.jpg
+
+**Product relation**
+
+.. image:: ../images/extensions/product_relations.jpg
+
+**Layout clone**
+
+.. image:: ../images/extensions/layout_clone.png
+
+**Import export theme**
+
+.. image:: ../images/extensions/import_export.jpg
+
+**Theme Settings**
+
+.. image:: ../images/extensions/theme_development.jpg
+
+**Custom checkout pages**
+
+.. image:: ../images/extensions/checkout1.jpg
+.. image:: ../images/extensions/checkout2.jpg
+.. image:: ../images/extensions/checkout3.jpg
+
+**Addition settings**
+
+.. image:: ../images/extensions/mysetting_mini_general.jpg
+.. image:: ../images/extensions/mysetting_mini_product.jpg
+.. image:: ../images/extensions/mysetting_mini_seo.jpg
+.. image:: ../images/extensions/mysetting_mini_social.jpg
+

@@ -1,0 +1,239 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sử dụng Form &mdash; Vinacart Docs 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Vinacart Docs 1.0 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Vinacart Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="cai-dat-vinacart.html">Vinacart Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Cấu trúc theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-start.html">Getting start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theme-config.html">Cấu hình theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global-config.html">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build-tool.html">Build theme automation tool</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Vinacart Docs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Sử dụng Form</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/form.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="su-dung-form">
+<h1>Sử dụng Form<a class="headerlink" href="#su-dung-form" title="Permalink to this headline">¶</a></h1>
+<p>Vinacart không giới hạn tạo form, bạn có thể tạo nhiều form theo ý muốn với mục đích sử dụng khác nhau. Tuy nhiên có một form mặc định dùng cho trang liên hệ (?rt=content/contact) tên là <code class="docutils literal"><span class="pre">ContactUsFrm</span></code>.</p>
+<div class="section" id="tao-form">
+<h2>Tạo Form<a class="headerlink" href="#tao-form" title="Permalink to this headline">¶</a></h2>
+<p>Để sửa form này, truy cập <strong>Design &gt; Forms Manager</strong>, nhấn vào nút Edit ở dòng &#8216;ContactUsFrm&#8217;. Bạn có thể thêm vài trường tùy ý với nhiều kiểu trường như text, select, checkbox..</p>
+<p>Trong bài này mình sẽ hướng dẫn bạn cách tạo form gửi mail với google form. Trước tiên bạn chuẩn bị một google form giống như thế này <a class="reference external" href="https://docs.google.com/forms/d/e/1FAIpQLSd99tXc9qBuAGmIE8LgHxGMSFaScdlEJSTl_C0IcRNYbxvuRg/viewform">https://docs.google.com/forms/d/e/1FAIpQLSd99tXc9qBuAGmIE8LgHxGMSFaScdlEJSTl_C0IcRNYbxvuRg/viewform</a></p>
+<p>Lấy địa chỉ action của form bằng cách chuột phải chọn <strong>View Page Source</strong> tìm từ <code class="docutils literal"><span class="pre">&lt;form</span></code>.</p>
+<img alt="_images/google-form-response.png" src="_images/google-form-response.png" />
+<p>Copy giá trị trong thuộc tính <code class="docutils literal"><span class="pre">action</span></code>.</p>
+<p>Tiếp đến, bạn tạo mới form từ menu <strong>Design &gt; Forms Manager</strong> nhấn nút add [+]. CHúng ta điền thông số của form như:</p>
+<ul class="simple">
+<li>Form name: tên form, thường viết liền không có dấu cách.</li>
+<li>description: mô tả cho form.</li>
+<li>Processing Controller: chọn &#8216;Google Form&#8217;</li>
+<li>Success page: xóa đi.</li>
+</ul>
+<p>Hoàn tất nhấn nút Save.
+Chú ý: sau khi lưu form bạn sẽ thấy trường <code class="docutils literal"><span class="pre">Success</span> <span class="pre">page</span></code> tự động điền giá trị <code class="docutils literal"><span class="pre">forms_manager/ticket/success</span></code> đây là controller sử lý trang thành công bạn không được xóa đi và có thêm một trường &#8216;Google Form Response URL&#8217; tại đây bạn điền địa chỉ google form vừa copy ở bước trên. Điền và nhấn Save lại lần nữa.</p>
+<p>Để kiểm tra form có hoạt động, nhấn vào nút <strong>Check google form</strong> và nút <strong>View form</strong></p>
+<p>Bước quan trọng tiếp theo, chúng ta sẽ gán trường google form tương ứng vào trường của form. Để thêm trường mới bạn nhấn nút [+], điền các thông tin sau:</p>
+<ul class="simple">
+<li>Field type: input, textarea,...</li>
+<li>Display name: tên hiển thị</li>
+<li>Field name: tên trường, không chứa dấu cách chỉ cho phép chữ cái, số và dấu _</li>
+</ul>
+<p>Nhấn Save, bạn sẽ thấy xuất hiện trường &#8216;Google Form Field&#8217;, trường này liệt kê danh sách các trường có trong Google form bạn chọn một trường tương ứng với field này.</p>
+<img alt="_images/vnc-create-form1.png" src="_images/vnc-create-form1.png" />
+<p>Sau khi đã thêm đầy đủ các trường của form và gán tương ứng với trường google form, chúng ta để ý có 5 trường đặc biệt khác: <code class="docutils literal"><span class="pre">sendEmail</span></code>, <code class="docutils literal"><span class="pre">admin_email</span></code>, <code class="docutils literal"><span class="pre">admin_phone</span></code>, <code class="docutils literal"><span class="pre">website</span></code>, <code class="docutils literal"><span class="pre">settings</span></code>.</p>
+<p>Quan trọng: các trường này bạn sẽ tạo thêm 5 trường với kiểu trường <code class="docutils literal"><span class="pre">hidden</span></code>. Hướng dẫn: tạo trường mới, mục &#8216;Field type&#8217; chọn &#8216;hidden&#8217;, mục &#8216;Display name&#8217; để dấu cách và mục &#8216;Field name&#8217; điền tên trường đặc biệt ở trên.</p>
+</div>
+<div class="section" id="chen-form-vao-layout">
+<h2>Chèn form vào layout<a class="headerlink" href="#chen-form-vao-layout" title="Permalink to this headline">¶</a></h2>
+<p>Để form hiển thị trên website, bạn cần chèn vào layout. Trước tiên bạn sẽ tạo block cho form này. Truy cập <strong>Design &gt; Blocks</strong>, nhấn add [+] chọn &#8216;Custom Forms Block&#8217;.</p>
+<img alt="_images/vnc-block-form.jpg" src="_images/vnc-block-form.jpg" />
+<p>Ở mục Form chọn trường bạn muốn sử dụng.</p>
+<p>Cuối cùng, thêm block này vào layout, bạn vào menu <strong>Design &gt; Layout</strong>.</p>
+<img alt="_images/vnc-form-block-layout.png" src="_images/vnc-form-block-layout.png" />
+<p>Chúc bạn thành công !</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, VinaCart.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

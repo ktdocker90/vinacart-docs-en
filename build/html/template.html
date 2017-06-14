@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Template &mdash; Vinacart Docs 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Vinacart Docs 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Build theme automation tool" href="build-tool.html"/>
+        <link rel="prev" title="Sử dụng layout blocks" href="intro-layout-blocks.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Vinacart Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="cai-dat-vinacart.html">Vinacart Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Cấu trúc theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-start.html">Getting start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theme-config.html">Cấu hình theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global-config.html">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Template</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#bien-su-dung-trong-template">Biến sử dụng trong template</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build-tool.html">Build theme automation tool</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Vinacart Docs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Template</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/template.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="template">
+<h1>Template<a class="headerlink" href="#template" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="bien-su-dung-trong-template">
+<h2>Biến sử dụng trong template<a class="headerlink" href="#bien-su-dung-trong-template" title="Permalink to this headline">¶</a></h2>
+<p>Biến toàn cục: <code class="docutils literal"><span class="pre">$vnc</span></code> truy cập ở mọi template (.tpl).</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="nx">vnc</span> <span class="o">%</span><span class="p">}</span>
+      <span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;product&#39;</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;product&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">name</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">h3</span><span class="o">&gt;</span>
+
+      <span class="p">{</span><span class="o">%</span> <span class="k">elseif</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">name</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">h3</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">description</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+
+      <span class="p">{</span><span class="o">%</span> <span class="k">elseif</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;blog_category&#39;</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
+  <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;blog_category&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">name</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">h1</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;blog_category&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">description</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+
+<span class="p">{</span><span class="o">%</span> <span class="k">elseif</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;blog_entry&#39;</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
+  <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;blog_entry&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">entry_title</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">h1</span><span class="o">&gt;</span>
+
+<span class="p">{</span><span class="c1"># elseif vnc.getVar(&#39;blog_author&#39;) %}</span>
+  <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;blog_author&#39;</span><span class="p">)</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">h1</span><span class="o">&gt;</span>
+  <span class="c1">#}</span>
+
+      <span class="p">{</span><span class="o">%</span> <span class="k">elseif</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;heading_title&#39;</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="p">{{</span><span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;heading_title&#39;</span><span class="p">)</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">h3</span><span class="o">&gt;</span>
+
+      <span class="p">{</span><span class="o">%</span> <span class="k">else</span> <span class="o">%</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="k">Empty</span><span class="o">&lt;/</span><span class="nx">h3</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="o">%</span> <span class="k">endif</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">{</span><span class="o">%</span> <span class="k">endif</span> <span class="o">%</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Lấy nội dung bất kỳ block nào trong page.tpl (ngoại trừ parent block (column_left, ..))</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">//parent block, child block index: deprecated</span>
+<span class="p">{</span><span class="c1"># vnc._view.loadBlock(&#39;header_bottom&#39;, 0) #}</span>
+
+<span class="p">{{</span> <span class="nx">registry</span><span class="o">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;_view&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">loadBlock</span><span class="p">(</span><span class="s1">&#39;footer_top&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">}}</span>
+
+<span class="c1">#or short form using</span>
+<span class="p">{{</span> <span class="nx">loadBlock</span><span class="p">(</span><span class="s1">&#39;header_bottom&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">}}</span>
+
+<span class="c1">//get variable data from any block/page. note: make sure this block already loaded</span>
+<span class="p">{{</span> <span class="nx">blockVar</span><span class="p">(</span><span class="s1">&#39;blocks/bestseller&#39;</span><span class="p">,</span><span class="s1">&#39;var1&#39;</span><span class="p">)</span> <span class="p">}}</span>
+<span class="p">{</span><span class="o">%</span> <span class="nx">set</span> <span class="nx">categories</span> <span class="o">=</span> <span class="nx">blockVar</span><span class="p">(</span><span class="s1">&#39;pages/product/category&#39;</span><span class="p">,</span> <span class="s1">&#39;categories&#39;</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
+<span class="c1">//or</span>
+<span class="p">{{</span> <span class="nx">registry</span><span class="o">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;_view&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">blockVar</span><span class="p">(</span><span class="o">..</span><span class="p">)</span> <span class="p">}}</span>
+
+<span class="c1">//for block</span>
+<span class="nx">blockVar</span><span class="p">(</span><span class="s1">&#39;blocks/bestseller&#39;</span><span class="p">,</span> <span class="s1">&#39;products&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Template tag</strong></p>
+<p>common template tag:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">is_admin</span><span class="p">()</span> <span class="o">%</span><span class="p">}</span>
+<span class="n">is_home</span><span class="p">()</span>
+<span class="n">is_category</span><span class="p">()</span>
+<span class="n">is_single_product</span><span class="p">()</span>
+<span class="n">is_manufacturer</span><span class="p">()</span>
+<span class="n">is_generic_pages</span><span class="p">()</span>
+<span class="n">is_search</span><span class="p">()</span>
+<span class="n">is_ajax</span><span class="p">()</span>
+<span class="n">is_page</span><span class="p">(</span><span class="s1">&#39;content/contact&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Model</strong></p>
+<p>Truy cập model.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">getModel</span><span class="p">(</span><span class="s1">&#39;catalog/product&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">getProduct</span><span class="p">(</span><span class="s1">&#39;&lt;ID&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Components</strong>.</p>
+<p>Ngoài các blocks có sẵn trong layout, chúng tôi cho phép nạp một số block mà không cần thêm vào layout. Thành phần hiển thị như comment,..</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">loadView</span><span class="p">(</span><span class="s1">&#39;comment&#39;</span><span class="p">)</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="n">loadView</span><span class="p">(</span><span class="s1">&#39;social_button&#39;</span><span class="p">)</span> <span class="p">}}</span>
+</pre></div>
+</div>
+<p><strong>Form Field</strong>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="nb">set</span> <span class="n">btn</span> <span class="o">=</span> <span class="n">review_button</span><span class="o">.</span><span class="n">vnc_getProperty</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
+<span class="o">&lt;</span><span class="n">button</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;button submit&quot;</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;{{ btn.title? btn.title : btn.text }}&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">btn</span><span class="o">.</span><span class="n">text</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
+
+<span class="c1"># other way</span>
+<span class="o">&lt;</span><span class="n">button</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;button submit&quot;</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;{{ fieldValue(review_button,&#39;title&#39;,&#39;text&#39;) }}&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">fieldValue</span><span class="p">(</span><span class="n">review_button</span><span class="p">,</span><span class="s1">&#39;text&#39;</span><span class="p">)</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Debuging</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">buitin</span> <span class="n">function</span> <span class="n">help</span> <span class="n">you</span> <span class="nb">print</span> <span class="n">value</span> <span class="n">of</span> <span class="nb">any</span> <span class="n">variable</span>
+<span class="p">{{</span> <span class="n">_print</span><span class="p">(</span><span class="o">..</span><span class="p">)</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="n">_debug_backtrace</span><span class="p">(</span><span class="n">debug_backtrace</span><span class="p">())</span> <span class="p">}}</span>
+</pre></div>
+</div>
+<p><strong>URL</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">html</span><span class="o">.</span><span class="n">getSEOURL</span><span class="p">(</span><span class="s1">&#39;account/wishlist&#39;</span><span class="p">)</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="n">html</span><span class="o">.</span><span class="n">getURL</span><span class="p">(</span><span class="s1">&#39;account/wishlist&#39;</span><span class="p">)</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="n">html</span><span class="o">.</span><span class="n">getSecureURL</span><span class="p">(</span><span class="s1">&#39;account/wishlist&#39;</span><span class="p">)</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="n">html</span><span class="o">.</span><span class="n">getHomeURL</span><span class="p">()</span> <span class="p">}}</span>
+</pre></div>
+</div>
+<p><strong>Customer</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">wishlist</span> <span class="n">count</span>
+<span class="p">{{</span> <span class="n">customer</span><span class="o">.</span><span class="n">getWishList</span><span class="p">()</span><span class="o">|</span><span class="n">length</span> <span class="p">}}</span>
+</pre></div>
+</div>
+<p><strong>User</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">current</span> <span class="n">user</span>
+<span class="p">{{</span> <span class="n">current_user</span><span class="p">()</span> <span class="p">}}</span>
+</pre></div>
+</div>
+<p><strong>Utils functions</strong></p>
+<p>String:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>//replace string at first found
+str_replace_first($find, $replace, $object)
+</pre></div>
+</div>
+<p>Config:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;store_main_email&#39;</span><span class="p">)</span>
+<span class="p">{{</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;livechat_embed&#39;</span><span class="p">)</span> <span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="build-tool.html" class="btn btn-neutral float-right" title="Build theme automation tool" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="intro-layout-blocks.html" class="btn btn-neutral" title="Sử dụng layout blocks" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, VinaCart.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Cấu trúc theme &mdash; Vinacart Docs 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Vinacart Docs 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Getting start" href="getting-start.html"/>
+        <link rel="prev" title="Vinacart Installation" href="cai-dat-vinacart.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Vinacart Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="cai-dat-vinacart.html">Vinacart Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cấu trúc theme</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#config-xml">config.xml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main-php">main.php</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#theme-xml">theme.xml</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting-start.html">Getting start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theme-config.html">Cấu hình theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global-config.html">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build-tool.html">Build theme automation tool</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Vinacart Docs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Cấu trúc theme</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/vinacart-theme-structure.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cau-truc-theme">
+<h1>Cấu trúc theme<a class="headerlink" href="#cau-truc-theme" title="Permalink to this headline">¶</a></h1>
+<p>Theme được viết dưới dạng extension, cấu trúc của một theme giống với
+cấu trúc 1 extension gồm có:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>admin/ - cấu trúc MVC sử lý phần backend.</dt>
+<dd><ul class="first last simple">
+<li>controller/ - chứa files php (controllers)</li>
+<li>model/ - chứa files php (models)</li>
+<li>view/ - files .tpl hiển thị dữ liệu</li>
+<li>language/ - files .xml chứa ngôn ngữ dịch.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">core/ - chứa hooks.</p>
+</li>
+<li><dl class="first docutils">
+<dt>storefront/ - cấu trúc MVC sử lý ở frontend (website)</dt>
+<dd><ul class="first last">
+<li><p class="first">Cấu trúc tương tự <code class="docutils literal"><span class="pre">admin/</span></code></p>
+</li>
+<li><dl class="first docutils">
+<dt>language/ - chứa ngôn ngữ dịch.</dt>
+<dd><ul class="first last simple">
+<li>english/</li>
+<li>vietnamese/</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>view</dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">&lt;theme_name&gt;</span></code>/ - chú ý cần trùng với tên thư mục theme. Bạn sẽ làm việc với thư mục này để thiết kế template.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>data/ - chứa dữ liệu mẫu của theme (sử dụng trong quá trình cài đặt).</dt>
+<dd><ul class="first last simple">
+<li>blocks.xml - lưu toàn bộ khai báo blocks.</li>
+<li>layout.xml - lưu layout &amp; pages.</li>
+<li>datasets.xml - lưu cấu hình blocks.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>image/</dt>
+<dd><ul class="first last simple">
+<li>icon.png - icon của theme.</li>
+<li>chứa các ảnh khác.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">config.xml - thông tin theme</p>
+</li>
+<li><p class="first">install.php - code sử lý khi cài đặt theme.</p>
+</li>
+<li><p class="first">install.sql - import sql data khi cài đặt theme.</p>
+</li>
+<li><p class="first">uninstall.php - code sử lý khi hủy cài đặt theme.</p>
+</li>
+<li><p class="first">uninstall.sql - chạy lệnh sql khi hủy cài đặt theme.</p>
+</li>
+<li><p class="first">main.php - Khai báo các files php, .tpl có sử dụng</p>
+</li>
+<li><p class="first">icon.png - ảnh đại diện của theme.</p>
+</li>
+<li><p class="first">theme.xml - thông tin cơ bản về theme.</p>
+</li>
+</ul>
+<p>Xem extension <code class="docutils literal"><span class="pre">mytheme</span></code> (extensions/mytheme) để tham khảo cách viết một theme mẫu.</p>
+<div class="section" id="config-xml">
+<h2>config.xml<a class="headerlink" href="#config-xml" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;extension&gt;
+  &lt;id&gt;mytheme&lt;/id&gt;
+  &lt;version&gt;1.0.0&lt;/version&gt;
+  &lt;type&gt;template&lt;/type&gt;
+  &lt;category&gt;template&lt;/category&gt;
+  &lt;cartversions&gt;
+    &lt;item&gt;1.2&lt;/item&gt;
+  &lt;/cartversions&gt;
+  &lt;priority&gt;0&lt;/priority&gt;
+  &lt;dependencies&gt;
+      &lt;item &gt;vinacart&lt;/item&gt;
+  &lt;/dependencies&gt;
+  &lt;settings&gt;
+    &lt;item id=&quot;mytheme_status&quot;&gt;
+      &lt;type&gt;checkbox&lt;/type&gt;
+      &lt;default_value&gt;0&lt;/default_value&gt;
+    &lt;/item&gt;
+    &lt;item id=&quot;mytheme_slogan&quot;&gt;
+        &lt;type&gt;textarea&lt;/type&gt;
+        &lt;default_value&gt;&lt;/default_value&gt;
+    &lt;/item&gt;
+  &lt;/settings&gt;
+
+  &lt;additional_settings&gt;&lt;![CDATA[setting/setting&amp;active=appearance]]&gt;&lt;/additional_settings&gt;
+  &lt;preview&gt;
+      &lt;item&gt;preview.jpg&lt;/item&gt;
+      &lt;item&gt;preview1.jpg&lt;/item&gt;
+      &lt;item&gt;preview2.jpg&lt;/item&gt;
+      ...
+  &lt;/preview&gt;
+  &lt;install&gt;
+    &lt;sql&gt;install.sql&lt;/sql&gt;
+    &lt;trigger&gt;install.php&lt;/trigger&gt;
+  &lt;/install&gt;
+  &lt;uninstall&gt;
+    &lt;sql&gt;uninstall.sql&lt;/sql&gt;
+    &lt;trigger&gt;uninstall.php&lt;/trigger&gt;
+  &lt;/uninstall&gt;
+&lt;/extension&gt;
+</pre></div>
+</div>
+<p>Bạn sửa các thông tin sau đây:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">id</span></code> - id của theme là tên thư mục của theme (viết liền không chứa dấu cách).</li>
+<li><code class="docutils literal"><span class="pre">version</span></code> - phiên bản theme</li>
+<li><code class="docutils literal"><span class="pre">preview</span></code> - thêm ảnh đại diện cho theme. Ảnh nằm trong thư mục image/</li>
+</ul>
+<p>Các thông số khác dữ nguyên. VD:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">type</span></code> - kiểu <em>template</em></li>
+<li><code class="docutils literal"><span class="pre">category</span></code> - nằm trong danh mục <em>template</em>.</li>
+</ul>
+</div>
+<div class="section" id="main-php">
+<h2>main.php<a class="headerlink" href="#main-php" title="Permalink to this headline">¶</a></h2>
+<p>Tại đây bạn khai báo toàn bộ các files <a href="#id1"><span class="problematic" id="id2">*</span></a>.php, <a href="#id3"><span class="problematic" id="id4">*</span></a>.tpl thuộc controller, model, template &amp; language. Mỗi biến có 2 phần <code class="docutils literal"><span class="pre">storefront</span></code> &amp; <code class="docutils literal"><span class="pre">admin</span></code> dành cho admin và frontend.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span> <span class="c1">//quy định template không viết hành động</span>
+<span class="nv">$controllers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+   <span class="s1">&#39;storefront&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(),</span>
+   <span class="s1">&#39;admin&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">()</span>
+ <span class="p">);</span>
+
+ <span class="c1">//quy định template không viết model</span>
+<span class="nv">$models</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span> <span class="s1">&#39;storefront&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(),</span> <span class="s1">&#39;admin&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">());</span>
+
+<span class="nv">$templates</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+ <span class="s1">&#39;storefront&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+     <span class="s1">&#39;blocks/account.tpl&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;blocks/bestseller.tpl&#39;</span><span class="p">,</span>
+     <span class="o">..</span>
+<span class="p">),</span>
+ <span class="s1">&#39;admin&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+   <span class="c1">//quy định template thì không viết cho admin</span>
+<span class="p">)</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>Chú ý: tạo thêm file (php, tpl) khác phải khai báo đầy đủ vào đây.</p>
+</div>
+<div class="section" id="theme-xml">
+<h2>theme.xml<a class="headerlink" href="#theme-xml" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;theme&gt;
+    &lt;name&gt;&lt;![CDATA[MyTheme]]&gt;&lt;/name&gt;&lt;!-- title --&gt;
+    &lt;description&gt;&lt;![CDATA[Theme description]]&gt;&lt;/description&gt;
+    &lt;version&gt;1.0&lt;/version&gt;
+    &lt;screenshot&gt;screenshot.jpg&lt;/screenshot&gt;&lt;!-- image/icon.png --&gt;
+&lt;/theme&gt;
+</pre></div>
+</div>
+<p>Phần nội dung này được hiển thị trên themes stores của chúng tôi, một khi theme được public lên server. Bạn khai báo tên, mô tả,
+version và hình xem trước. Xem tiếp <a class="reference external" href="theme-config.html">Thiết lập file cấu hình cho theme</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="getting-start.html" class="btn btn-neutral float-right" title="Getting start" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cai-dat-vinacart.html" class="btn btn-neutral" title="Vinacart Installation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, VinaCart.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

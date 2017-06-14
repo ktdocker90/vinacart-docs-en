@@ -1,0 +1,880 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Cấu hình theme &mdash; Vinacart Docs 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Vinacart Docs 1.0 documentation" href="index.html"/>
+        <link rel="next" title="General" href="global-config.html"/>
+        <link rel="prev" title="Getting start" href="getting-start.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Vinacart Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="cai-dat-vinacart.html">Vinacart Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Cấu trúc theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-start.html">Getting start</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cấu hình theme</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assets">Assets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#thu-vien">Thư viện</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#templates">Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#layout">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#blocks">Blocks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cau-hinh-block">Cấu hình block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#block-skin">Block Skin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#image-configuration">Image Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="global-config.html">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build-tool.html">Build theme automation tool</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Vinacart Docs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Cấu hình theme</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/theme-config.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cau-hinh-theme">
+<h1>Cấu hình theme<a class="headerlink" href="#cau-hinh-theme" title="Permalink to this headline">¶</a></h1>
+<p>File cấu hình của theme cho phép bạn thiết lập tùy biến về giao diện hiển thị ở các trang, cũng như khai báo các files assets (.js, .css) cần thiết sử dụng trong các pages.
+Ngoài ra bạn có thể tùy chỉnh thêm layout hiển thị riêng cho các page cụ thể và điều chỉnh vị trí của các blocks.</p>
+<p>Bạn sửa file này tại <code class="docutils literal"><span class="pre">storefront/view/&lt;theme&gt;/config/theme.xml</span></code>
+Ví dụ:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+    &lt;theme&gt;
+            &lt;assets&gt;
+                    &lt;file type=&quot;css&quot;&gt;&lt;![CDATA[https://fonts.googleapis.com/css?family=Lato:400,700,300]]&gt;&lt;/file&gt;
+
+                    &lt;file type=&quot;css&quot;&gt;&lt;![CDATA[/assets/css/bootstrap.min.css]]&gt;&lt;/file&gt;
+
+                    &lt;!-- global styles --&gt;
+                    &lt;file type=&quot;js&quot; bottom=&quot;1&quot;&gt;&lt;![CDATA[/mytheme/themes/js/jquery.scrolltotop.js]]&gt;&lt;/file&gt;
+
+
+                    &lt;file type=&quot;js&quot; bottom=&quot;1&quot;&gt;&lt;![CDATA[/javascript/bootstrap.min.js]]&gt;&lt;/file&gt;
+                    &lt;file type=&quot;js&quot; bottom=&quot;1&quot;&gt;&lt;![CDATA[/assets/js/wow.min.js]]&gt;&lt;/file&gt;
+
+                    &lt;!-- fancybox js
+                    ============================================ --&gt;
+                    &lt;file type=&quot;js&quot; bottom=&quot;1&quot;&gt;&lt;![CDATA[/assets/js/fancybox/jquery.fancybox.pack.js]]&gt;&lt;/file&gt;
+
+                    &lt;!-- main JS
+                    ============================================ --&gt;
+                    &lt;file type=&quot;js&quot; bottom=&quot;1&quot;&gt;&lt;![CDATA[/assets/js/main.js]]&gt;&lt;/file&gt;
+
+                    &lt;file type=&quot;js&quot; bottom=&quot;1&quot;&gt;&lt;![CDATA[/javascript/respond.min.js]]&gt;&lt;/file&gt;
+                    &lt;file type=&quot;js&quot; bottom=&quot;1&quot;&gt;&lt;![CDATA[/javascript/jquery.validate.js]]&gt;&lt;/file&gt;
+                    &lt;file type=&quot;js&quot; bottom=&quot;1&quot;&gt;&lt;![CDATA[/javascript/jquery.carouFredSel-6.1.0-packed.js]]&gt;&lt;/file&gt;
+                    &lt;file type=&quot;js&quot; bottom=&quot;1&quot;&gt;&lt;![CDATA[/javascript/jquery.mousewheel.min.js]]&gt;&lt;/file&gt;
+                    &lt;file type=&quot;js&quot; bottom=&quot;1&quot;&gt;&lt;![CDATA[/javascript/jquery.touchSwipe.min.js]]&gt;&lt;/file&gt;
+                    &lt;file type=&quot;js&quot; bottom=&quot;1&quot;&gt;&lt;![CDATA[/javascript/jquery.ba-throttle-debounce.min.js]]&gt;&lt;/file&gt;
+                    &lt;file type=&quot;js&quot; bottom=&quot;1&quot;&gt;&lt;![CDATA[/javascript/jquery.onebyone.min.js]]&gt;&lt;/file&gt;
+                    &lt;file type=&quot;js&quot; bottom=&quot;1&quot;&gt;&lt;![CDATA[/javascript/custom.js]]&gt;&lt;/file&gt;
+                    &lt;!-- library --&gt;
+                    &lt;file type=&quot;lib&quot;&gt;&lt;![CDATA[sliders/bxslider]]&gt;&lt;/file&gt;
+            &lt;/assets&gt;
+            &lt;assets page=&quot;index/home&quot;&gt;
+
+            &lt;/assets&gt;
+            &lt;assets page=&quot;about_us&quot;&gt;
+                    &lt;!-- &lt;file type=&quot;css&quot; &gt;&lt;![CDATA[]]&gt;&lt;/file&gt; --&gt;&lt;!-- page=&quot;index/home&quot; --&gt;
+                    &lt;!-- &lt;file type=&quot;js&quot; bottom=&quot;1&quot;&gt;&lt;![CDATA[]]&gt;&lt;/file&gt; --&gt;&lt;!-- `buttom` attribute only for js file --&gt;
+            &lt;/assets&gt;
+
+            &lt;templates&gt;
+                    &lt;!-- custom templates page --&gt;
+            &lt;/templates&gt;
+
+            &lt;!-- layout --&gt;
+            &lt;layout&gt;
+                    &lt;!-- custom layouts --&gt;
+            &lt;/layout&gt;
+            &lt;!-- blocks --&gt;
+            &lt;blocks&gt;
+                    &lt;!-- custom blocks --&gt;
+            &lt;/blocks&gt;
+    &lt;/theme&gt;
+</pre></div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;theme&gt;
+        &lt;!-- configuration --&gt;
+    &lt;configuration&gt;
+        &lt;item name=&quot;version&quot; value=&quot;1.2&quot;/&gt;
+        &lt;item name=&quot;sample_data&quot; value=&quot;thoitrang&quot;/&gt;
+        &lt;item name=&quot;name&quot; value=&quot;mytheme&quot;/&gt;
+        &lt;item name=&quot;image_product_width_small&quot; value=&quot;100&quot;/&gt;
+        &lt;item name=&quot;image_product_height_small&quot; value=&quot;95&quot;/&gt;
+    &lt;/configuration&gt;
+</pre></div>
+</div>
+<p>Khai báo các thông tin cấu hình ở thẻ <code class="docutils literal"><span class="pre">&lt;configuration</span></code> như version, sample_data, name.. Trong đó:
+- version: phiên bản hiện tại của vinacart
+- sample_data: tên dữ liệu mẫu bạn đang viết theme này. Danh sách dữ liệu mẫu gồm có: thoitrang, dulich,...(Bạn có thể bổ xung tùy ý, lưu ý không viết cách &amp; chứa ký tự UTF-8).
+- name: tên thư mục theme.</p>
+<p>Xem tiếp phần dưới có giải thích chi tiết cách dùng cấu hình.</p>
+</div>
+<div class="section" id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<p>Phần này sẽ sửa lại toàn bộ thông số cài đặt của Vinacart được lưu vào database. Trên giao diện quản trị, để sửa các cài đặt này bạn truy cập tại <code class="docutils literal"><span class="pre">?rt=setting/setting/all</span></code> . Do mỗi theme giá trị cài đặt cấu hình có thể khác nhau tùy vào giao diện theme mà tùy chỉnh cho phù hợp, thay vì sửa trực tiếp trong admin bạn có thể sửa trực tiếp các giá trị đó ở file theme.xml này.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;theme&gt;
+        &lt;settings&gt;
+        &lt;item name=&quot;config_storefront_api_status&quot; value=&quot;1&quot;/&gt;
+        &lt;item name=&quot;config_admin_api_status&quot; value=&quot;0&quot;/&gt;
+        &lt;item name=&quot;storefront_width&quot; value=&quot;80%&quot;/&gt;
+    &lt;/settings&gt;
+&lt;/theme&gt;
+</pre></div>
+</div>
+<p>Trường hợp lấy giá trị khai báo ở <code class="docutils literal"><span class="pre">&lt;configuration</span></code>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;theme&gt;
+        &lt;configuration&gt;
+        &lt;item name=&quot;image_product_width_small&quot; value=&quot;100&quot;/&gt;
+        &lt;item name=&quot;image_product_height_small&quot; value=&quot;95&quot;/&gt;
+    &lt;/configuration&gt;
+        &lt;settings&gt;
+        &lt;item name=&quot;config_image_product_height&quot; value=&quot;image_product_height_small&quot;/&gt;
+    &lt;/settings&gt;
+&lt;/theme&gt;
+</pre></div>
+</div>
+<p>Với cách trên sẽ hữu ích khi export/import theme.</p>
+</div>
+<div class="section" id="assets">
+<h2>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h2>
+<p>Khai báo chèn các files .js và .css sử dụng trong theme của bạn vào đây trong cặp thẻ <code class="docutils literal"><span class="pre">&lt;assets</span></code>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;assets&gt;
+    &lt;file type=&quot;css&quot;&gt;&lt;![CDATA[https://fonts.googleapis.com/css?family=Lato:400,700,300]]&gt;&lt;/file&gt;
+        &lt;file type=&quot;css&quot; media=&quot;all&quot;&gt;&lt;![CDATA[/asset/css/style.css]]&gt;&lt;/file&gt;
+        &lt;file type=&quot;js&quot; bottom=&quot;1&quot;&gt;&lt;![CDATA[/javascript/bootstrap.min.js]]&gt;&lt;/file&gt;
+&lt;/assets&gt;
+</pre></div>
+</div>
+<p>thuộc tính type chỉ định kiểu file, vd <code class="docutils literal"><span class="pre">type=&quot;css&quot;</span></code> dành cho file .css, nếu file bạn muốn load ở cuối trang thì thêm <code class="docutils literal"><span class="pre">bottom=&quot;1&quot;</span></code> vào thẻ <code class="docutils literal"><span class="pre">&lt;file</span></code> giống như trên không thì mặc định chúng hiển thị ở trong thẻ <code class="docutils literal"><span class="pre">&lt;head</span></code> (chỉ dành cho file js).</p>
+<p>Đối với file css, bạn có thể bổ xung thuộc tính <code class="docutils literal"><span class="pre">media</span></code> bằng cách khai báo thêm thuộc tính <code class="docutils literal"><span class="pre">media</span></code>. vd: <em>media=&#8221;all&#8221;</em></p>
+<p>Để cho đơn giản và dễ quản lý tôi đưa toàn bộ các files assets của theme vào một thư mục <code class="docutils literal"><span class="pre">assets</span></code> nằm tại <code class="docutils literal"><span class="pre">storefront/view/&lt;theme_name&gt;/</span></code>. Lưu ý: đường dẫn được bắt đầu trong thư mục theme.</p>
+<p>Các files css và js hệ thống bạn không được xóa đặc biệt là <a href="#id1"><span class="problematic" id="id2">*</span></a>.js chúng sử lý hành động của vinacart. vd: <code class="docutils literal"><span class="pre">/javascript</span></code>, <code class="docutils literal"><span class="pre">/stylesheet</span></code>
+Bên cạnh đó chúng ta có thể chèn URL ngoài như thư viện jquery,...google font.</p>
+<p><strong>Đường dẫn (Path)</strong></p>
+<p>Các files chứa trong theme thì được bắt đầu trong thư mục <code class="docutils literal"><span class="pre">storefront/view/&lt;theme_name&gt;/</span></code> và URL bắt đầu bằng dấu <code class="docutils literal"><span class="pre">/</span></code> giống như sau:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;file type=&quot;css&quot;&gt;&lt;![CDATA[/assets/style.css]]&gt;&lt;/file&gt;
+</pre></div>
+</div>
+<p>Những files hệ thống thì cũng giống như vậy nhưng ở tại thư mục theme hệ thống mặc định.</p>
+<p><strong>Load assset ở page chỉ định</strong></p>
+<p>Đôi khi bạn chỉ muốn load các file .css, js ở các page nào đó để tránh load nhiều files không cần thiết với mục đích tăng tốc độ hiển thị website. Chẳng hạn thư viện phóng ảnh chỉ dùng trong trang sản phẩm chi tiết, để thực hiện bạn khai báo thêm thẻ <cite>&lt;assets</cite> như sau.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;assets page=&quot;product/product&quot;&gt;
+        &lt;file type=&quot;css&quot; bottom=&quot;0&quot;&gt;&lt;![CDATA[/assets/custom-slider/css/nivo-slider.css]]&gt;&lt;/file&gt;
+        &lt;file type=&quot;css&quot; bottom=&quot;0&quot;&gt;&lt;![CDATA[/assets/custom-slider/css/preview.css]]&gt;&lt;/file&gt;
+
+        &lt;!-- Nivo slider js
+        ============================================ --&gt;
+        &lt;file type=&quot;js&quot; bottom=&quot;1&quot;&gt;&lt;![CDATA[/assets/custom-slider/js/jquery.nivo.slider.js]]&gt;&lt;/file&gt;
+        &lt;file type=&quot;js&quot; bottom=&quot;1&quot;&gt;&lt;![CDATA[/assets/custom-slider/home.js]]&gt;&lt;/file&gt;
+&lt;/assets&gt;
+</pre></div>
+</div>
+<p>Thuộc tính <code class="docutils literal"><span class="pre">page</span></code> chứa thông tin địa chỉ page (địa chỉ controller). Ví dụ: <code class="docutils literal"><span class="pre">storefront/controller/blocks/banner_block.php</span></code> thì địa chỉ page sẽ là <code class="docutils literal"><span class="pre">blocks/banner_block</span></code> . Địa chỉ là tham số <code class="docutils literal"><span class="pre">rt</span></code> khi bạn view site, có thể tìm thấy bằng cách view 1 trang sản phẩm.</p>
+<img alt="_images/vnc-url-rt.png" src="_images/vnc-url-rt.png" />
+<p>Chú ý: Mặc định site không bật chế độ SEO Url, để bạn thuận tiện cho việc debug.
+Bạn có thể khai báo nhiều thẻ <code class="docutils literal"><span class="pre">assets</span></code> nếu muốn, các thẻ không có thuộc tính <code class="docutils literal"><span class="pre">page</span></code> sẽ load ở mọi trang.</p>
+<p>Bạn cũng có thể chỉ định <code class="docutils literal"><span class="pre">page</span></code> bằng tên địa chỉ seo url (alias). VD: Ta có trang about:  <a class="reference external" href="http://your-domain/about_us">http://your-domain/about_us</a></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;assets page=&quot;about_us&quot;&gt;
+        &lt;file type=&quot;css&quot; &gt;&lt;![CDATA[/assets/css/file1.css]]&gt;&lt;/file&gt; --&gt;&lt;!-- page=&quot;index/home&quot; --&gt;
+        &lt;file type=&quot;js&quot; bottom=&quot;1&quot;&gt;&lt;![CDATA[/assets/js/file1.js]]&gt;&lt;/file&gt; --&gt;&lt;!-- `buttom` attribute only for js file --&gt;
+&lt;/assets&gt;
+</pre></div>
+</div>
+<p><strong>Load assets tùy vào ngữ cảnh</strong></p>
+<p>Đối với các file js/css/lib bạn muốn sử dụng cho một số block được gọi, vd quickview.css chỉ được chèn vào page khi hiển thị liệt kê sản phẩm. Trường hợp này không chỉ định vào page nào, mà có thể áp dụng cho nhiều trang. Xem ví dụ dưới:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>    &lt;assets context=&quot;productsListing=1&quot;&gt;
+    &lt;file type=&quot;css&quot; &gt;&lt;![CDATA[/asset/css/quick_view_popup.css]]&gt;&lt;/file&gt;
+    &lt;file type=&quot;lib&quot; &gt;&lt;![CDATA[zoom/cloud-zoom]]&gt;&lt;/file&gt;
+&lt;/assets&gt;
+</pre></div>
+</div>
+<p>Ở ví dụ trên chúng ta sử dụng thuộc tính <code class="docutils literal"><span class="pre">context</span></code> thay cho thuộc tính <code class="docutils literal"><span class="pre">page</span></code>. Chú ý: không sử dụng đồng thời 2 thuộc tính đó.</p>
+<div class="section" id="thu-vien">
+<h3>Thư viện<a class="headerlink" href="#thu-vien" title="Permalink to this headline">¶</a></h3>
+<p>Vinacart tích hợp sẵn các thư viện javascript/jquery phổ biến. Với mục đích sử dụng tiện lợi, lý do một số thư viện bao gồm nhiều file css &amp; js, bạn sẽ khó quản lý khi chèn từng file đôi khi một số thư viện sử dụng chung file rất dễ bị nhân bản nếu không sử dụng cẩn thận. Do vậy cách dễ dàng nhất là sử dụng thư viện mặc định của vinacart (Chú ý: bạn cũng có thể khai báo thêm thư viện, nếu muốn).</p>
+<p>Ví dụ: gọi thư viện bootstrap.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>    &lt;file type=&quot;lib&quot;&gt;
+    &lt;param name=&quot;name&quot;&gt;&lt;![CDATA[ui/bootstrap]]&gt;&lt;/param&gt;
+&lt;/file&gt;
+</pre></div>
+</div>
+<p>Mặc định sẽ load các files: bootstrap.min.css, bootstrap.min.js</p>
+<p>Xem đầy đủ thư viện tại <a class="reference external" href="http://tailieu.vinacart.net/?p=js_lib&amp;tp=file&amp;view=code">http://tailieu.vinacart.net/?p=js_lib&amp;tp=file&amp;view=code</a></p>
+<p>Bạn cũng có viết ngắn gọn như sau:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;file type=&quot;lib&quot;&gt;&lt;![CDATA[ui/bootstrap]]&gt;&lt;/file&gt;
+</pre></div>
+</div>
+<p>Tuy nhiên, trường hợp nếu trong thư viện có thêm một số file (vd: file bổ xung cho thư viện đó) không được mặc định load. VD: nivoSlider có nhiều skins khác nhau. Chúng ta khai báo đầy đủ theo cú pháp trên và thêm tên file bạn muốn nạp, mỗi file cách nhau dấu <code class="docutils literal"><span class="pre">|</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>    &lt;file type=&quot;lib&quot;&gt;
+    &lt;param name=&quot;name&quot;&gt;&lt;![CDATA[sliders/nivoSlider]]&gt;&lt;/param&gt;
+    &lt;param name=&quot;styles&quot;&gt;&lt;![CDATA[light.css]]&gt;&lt;/param&gt;
+&lt;/file&gt;
+</pre></div>
+</div>
+<p>Ví dụ: nạp các plugin của jquery:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>    &lt;file type=&quot;lib&quot;&gt;
+    &lt;param name=&quot;name&quot;&gt;&lt;![CDATA[jquery-libs]]&gt;&lt;/param&gt;
+    &lt;param name=&quot;scripts&quot;&gt;&lt;![CDATA[jquery.mousewheel.min.js|jquery.touchSwipe.min.js|jquery.ba-throttle-debounce.min.js]]&gt;&lt;/param&gt;
+&lt;/file&gt;
+</pre></div>
+</div>
+<p>Để bổ xung thêm thư viện, bạn viết vào file <code class="docutils literal"><span class="pre">core/config/library.php</span></code></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?php
+return array(
+    &#39;menu/smartmenus&#39; =&gt; array(
+        &#39;scripts&#39;=&gt; array(
+            &#39;jquery.smartmenus.min.js&#39;=&gt; array(
+                &#39;file&#39;=&gt; &#39;jquery.smartmenus.min.js&#39;,
+                &#39;required&#39;=&gt; 1,
+                &#39;bottom&#39;=&gt; 1
+            ),
+            &#39;jquery.smartmenus.bootstrap.js&#39;=&gt; array(
+                &#39;file&#39; =&gt; &#39;addons/bootstrap/jquery.smartmenus.bootstrap.min.js&#39;,
+                &#39;required&#39;=&gt; 1,
+                &#39;bottom&#39;=&gt; 1
+            )
+        ),
+        &#39;styles&#39;=&gt; array(
+            &#39;sm-core-css.css&#39;=&gt; array(
+                &#39;file&#39;=&gt; &#39;css/sm-core-css.css&#39;,
+                &#39;required&#39;=&gt; 1
+            ),
+            &#39;jquery.smartmenus.bootstrap.css&#39; =&gt; array(
+                &#39;file&#39;=&gt; &#39;addons/bootstrap/jquery.smartmenus.bootstrap.css&#39;,
+                &#39;required&#39;=&gt; 1
+            ),
+            &#39;sm-blue.css&#39;=&gt; array(
+                &#39;file&#39;=&gt; &#39;css/sm-blue/sm-blue.css&#39;,
+                &#39;required&#39;=&gt; 0
+            ),
+            &#39;sm-clean.css&#39; =&gt; array(
+                &#39;file&#39;=&gt; &#39;css/sm-clean/sm-clean.css&#39;,
+                &#39;required&#39;=&gt; 1
+            ),
+            &#39;sm-mint&#39; =&gt; array(
+                &#39;file&#39;=&gt; &#39;css/sm-mint/sm-mint.css&#39;,
+                &#39;required&#39;=&gt; 0
+            ),
+            &#39;sm-simple&#39; =&gt; array(
+                &#39;file&#39;=&gt; &#39;css/sm-simple/sm-simple.css&#39;,
+                &#39;required&#39;=&gt; 0
+            )
+        )
+    )
+);
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="templates">
+<h2>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h2>
+<p>Mặc định mọi trang sẽ gọi vào <code class="docutils literal"><span class="pre">common/page.tpl</span></code> như vậy bạn sẽ viết template chung cho toàn bộ pages vào file này, tuy nhiên nếu bạn muốn linh hoạt hơn bằng cách viết template cho các page khác nhau vào các file khác nhau, chúng ta sẽ khai báo thêm templates vào thẻ <code class="docutils literal"><span class="pre">&lt;templates</span></code>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;templates&gt;
+        &lt;!-- alway use short path --&gt;
+        &lt;page context=&quot;index/home&quot; template=&quot;common/page-home.tpl&quot;&gt;&lt;/page&gt;
+        &lt;!-- &lt;page context=&quot;index/maintenance&quot; template=&quot;common/page-maintenance.tpl&quot;&gt;&lt;/page&gt; --&gt;
+        &lt;page context=&quot;content/contact&quot; template=&quot;common/page-contact.tpl&quot;&gt;&lt;/page&gt;
+        &lt;page context=&quot;content/content&quot; args=&quot;content_id=1&quot; template=&quot;common/page-aboutus.tpl&quot;&gt;&lt;/page&gt;
+        &lt;page context=&quot;product/product&quot;  template=&quot;common/page-product.tpl&quot;&gt;&lt;/page&gt;
+        &lt;page context=&quot;product/category&quot;  template=&quot;common/page-category.tpl&quot;&gt;&lt;/page&gt;
+        &lt;page context=&quot;product/manufacturer&quot;  template=&quot;common/page-category.tpl&quot;&gt;&lt;/page&gt;
+        &lt;page context=&quot;product/search&quot;  template=&quot;common/page-category.tpl&quot;&gt;&lt;/page&gt;
+        &lt;page context=&quot;product/special&quot;  template=&quot;common/page-category.tpl&quot;&gt;&lt;/page&gt;
+
+&lt;/templates&gt;
+</pre></div>
+</div>
+<p>Mỗi page có template riêng biệt được khai báo vào thẻ <code class="docutils literal"><span class="pre">&lt;page</span></code>, địa chỉ page bởi thuộc tính <code class="docutils literal"><span class="pre">context</span></code> và địa chỉ .tpl xuất phát trong thư mục <code class="docutils literal"><span class="pre">template</span></code> của theme, khai báo vào thuộc tính <code class="docutils literal"><span class="pre">template</span></code>.</p>
+<p>Trường hợp địa chỉ page (controller) có nhiều trang con, vd: contact page : <code class="docutils literal"><span class="pre">content/contact</span></code> khi gửi thành công sẽ chuyển sang trang <code class="docutils literal"><span class="pre">content/contact/success</span></code>. Trang này chưa được khai báo ở trên do vậy mặc định sử dụng template page.tpl để hiển thị. Chúng ta sẽ gọi chung vào file .tpl của trang liên hệ đã khai báo ở trên như sau:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">page</span> <span class="n">context</span><span class="o">=</span><span class="s2">&quot;content/contact/success&quot;</span> <span class="n">template</span><span class="o">=</span><span class="s2">&quot;common/page-contact.tpl&quot;</span><span class="o">&gt;&lt;/</span><span class="n">page</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Cách khác, bạn cũng có thể thiết lập sử dụng chung template với trang chính  (content/contact) bằng cách thêm thuộc tính <code class="docutils literal"><span class="pre">child_pages=&quot;1&quot;</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">page</span> <span class="n">context</span><span class="o">=</span><span class="s2">&quot;content/contact&quot;</span> <span class="n">child_pages</span><span class="o">=</span><span class="s2">&quot;1&quot;</span> <span class="n">template</span><span class="o">=</span><span class="s2">&quot;common/page-contact.tpl&quot;</span><span class="o">&gt;&lt;/</span><span class="n">page</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Cách này sẽ áp dụng template page-contact.tpl cho mọi trang con từ địa chỉ &#8216;content/contact&#8217;.</p>
+<p><strong>Lọc page bởi tham số</strong></p>
+<p>Bạn cũng có thể sử dụng nhiều templates cho 1 trang, bằng cách lọc tham số URL. Ở ví dụ trên, page <code class="docutils literal"><span class="pre">content/content</span></code> sẽ hiển thị nội dung trang có <em>id=1</em>, khai báo tham số <code class="docutils literal"><span class="pre">content_id</span></code> vào thuộc tính <code class="docutils literal"><span class="pre">args</span></code>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">page</span> <span class="n">context</span><span class="o">=</span><span class="s2">&quot;content/content&quot;</span> <span class="n">args</span><span class="o">=</span><span class="s2">&quot;content_id=1&quot;</span> <span class="n">template</span><span class="o">=</span><span class="s2">&quot;common/page-aboutus.tpl&quot;</span><span class="o">&gt;&lt;/</span><span class="n">page</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Nếu nhiều hơn một tham số, các tham số cách nhau bởi dấu <code class="docutils literal"><span class="pre">&amp;</span></code> vd: <cite>arg1=value1&amp;arg2=value2</cite>
+Viết thêm mỗi template (.tpl) mới, bạn cần khai báo vào <code class="docutils literal"><span class="pre">&lt;custom_templates</span></code>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;custom_templates&gt;
+        &lt;tpl&gt;&lt;![CDATA[common/page-home.tpl]]&gt;&lt;/tpl&gt;
+        &lt;tpl&gt;&lt;![CDATA[common/page-contact.tpl]]&gt;&lt;/tpl&gt;
+        &lt;tpl&gt;&lt;![CDATA[common/page-product.tpl]]&gt;&lt;/tpl&gt;
+        &lt;tpl&gt;&lt;![CDATA[common/page-category.tpl]]&gt;&lt;/tpl&gt;
+    ...
+&lt;/custom_templates&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="layout">
+<h2>Layout<a class="headerlink" href="#layout" title="Permalink to this headline">¶</a></h2>
+<p>Vinacart có một số templates layout mặc định sau:</p>
+<ul class="simple">
+<li>Default Page Layout</li>
+<li>Home Page</li>
+<li>Checkout Pages</li>
+<li>Login Page</li>
+<li>Default Product Page</li>
+<li>Maintenance Page</li>
+<li>Customer Account Pages</li>
+<li>Cart Page</li>
+<li>Product Listing Page.</li>
+</ul>
+<p>Ngoài ra, vinacart cho phép bạn thêm layout cho nội dung category, product bạn muốn tùy chỉnh layout.
+Tuy nhiên việc tùy biến mọi layout sẽ không được phép trong giao diện admin.</p>
+<p>Ví dụ trang liên hệ bạn muốn chèn thêm block bản đồ sẽ không được, bạn không thể thao tác trong admin và cần khai báo thêm layout cho page bạn muốn thay đổi dữ liệu (blocks).
+Viết vào file cấu hình theme (theme.xml) nội dung sau:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">layout</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">page</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Category Layout&quot;</span> <span class="n">context</span><span class="o">=</span><span class="s2">&quot;product/category&quot;</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">apply</span> <span class="n">context</span><span class="o">=</span><span class="s2">&quot;product/manufacturer&quot;</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;/</span><span class="n">page</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">page</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Contact Page&quot;</span> <span class="n">context</span><span class="o">=</span><span class="s2">&quot;content/contact&quot;</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="o">&gt;</span>
+
+        <span class="o">&lt;/</span><span class="n">page</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">layout</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Tham số:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">name</span></code> - Tên hiển thị layout.</li>
+<li><code class="docutils literal"><span class="pre">context</span></code> - địa chỉ page.</li>
+</ul>
+<p>Các tham số khác để mặc định.
+Nếu bạn muốn áp dụng một layout cho các page khác, khai báo thẻ con <code class="docutils literal"><span class="pre">&lt;apply</span></code> giống như trên.</p>
+</div>
+<div class="section" id="blocks">
+<h2>Blocks<a class="headerlink" href="#blocks" title="Permalink to this headline">¶</a></h2>
+<p>Có 2 loại block:</p>
+<ul class="simple">
+<li>parent block: gồm <code class="docutils literal"><span class="pre">header</span></code>, <code class="docutils literal"><span class="pre">header_bottom</span></code>, <code class="docutils literal"><span class="pre">column_left</span></code>, <code class="docutils literal"><span class="pre">column_right</span></code>, <code class="docutils literal"><span class="pre">content_top</span></code>, <code class="docutils literal"><span class="pre">content_bottom</span></code></li>
+<li>child block: là các blocks con chứa trong parent block. vd: latest, bestsellers, account,..</li>
+</ul>
+<p>Vinacart quy định các child blocks giới hạn hiển thị trong parent blocks. VD, block <em>bestsellers</em> mặc định chỉ hiển thị ở <code class="docutils literal"><span class="pre">column_left</span></code>, <code class="docutils literal"><span class="pre">column_right</span></code>, <code class="docutils literal"><span class="pre">content_bottom</span></code>.</p>
+<p>Tuy nhiên bạn có thể mở rộng hiển thị các blocks ở vị trí parent blocks khác để thuận lợi trong việc phát triển theme. Để làm điều này bạn khai báo vào thẻ <code class="docutils literal"><span class="pre">&lt;blocks</span></code>. Xem ví dụ dưới đây:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;blocks&gt;
+        &lt;block&gt;
+                &lt;!-- example of overriding block --&gt;
+                &lt;block_txt_id&gt;&lt;![CDATA[bestsellers]]&gt;&lt;/block_txt_id&gt;
+                &lt;controller&gt;blocks/bestseller&lt;/controller&gt;
+                &lt;templates&gt;
+                        &lt;__AUTO_INCREASE__&gt;
+                                &lt;parent_block_txt_id&gt;&lt;![CDATA[footer_top]]&gt;&lt;/parent_block_txt_id&gt;
+                                &lt;template&gt;&lt;![CDATA[blocks/bestseller.tpl]]&gt;&lt;/template&gt;
+                        &lt;/__AUTO_INCREASE__&gt;
+                        &lt;__AUTO_INCREASE__&gt;
+                                &lt;parent_block_txt_id&gt;&lt;![CDATA[header_bottom]]&gt;&lt;/parent_block_txt_id&gt;
+                                &lt;template&gt;&lt;![CDATA[blocks/bestseller_home.tpl]]&gt;&lt;/template&gt;
+                        &lt;/__AUTO_INCREASE__&gt;
+                        &lt;__AUTO_INCREASE__&gt;
+                                &lt;parent_block_txt_id&gt;&lt;![CDATA[column_left]]&gt;&lt;/parent_block_txt_id&gt;
+                                &lt;template&gt;&lt;![CDATA[blocks/bestseller.tpl]]&gt;&lt;/template&gt;
+                        &lt;/__AUTO_INCREASE__&gt;
+                        &lt;__AUTO_INCREASE__&gt;
+                                &lt;parent_block_txt_id&gt;&lt;![CDATA[content_bottom]]&gt;&lt;/parent_block_txt_id&gt;
+                                &lt;template&gt;&lt;![CDATA[blocks/bestseller_home.tpl]]&gt;&lt;/template&gt;
+                        &lt;/__AUTO_INCREASE__&gt;
+                        &lt;__AUTO_INCREASE__&gt;
+                                &lt;parent_block_txt_id&gt;&lt;![CDATA[column_right]]&gt;&lt;/parent_block_txt_id&gt;
+                                &lt;template&gt;&lt;![CDATA[blocks/bestseller.tpl]]&gt;&lt;/template&gt;
+                        &lt;/__AUTO_INCREASE__&gt;
+
+                &lt;/templates&gt;
+                &lt;custom_templates&gt;
+                        &lt;__AUTO_INCREASE__&gt;
+                                &lt;parent_block_txt_id&gt;&lt;![CDATA[footer_top]]&gt;&lt;/parent_block_txt_id&gt;
+                                &lt;template&gt;&lt;![CDATA[blocks/bestseller.tpl]]&gt;&lt;/template&gt;
+                                &lt;page valueAsAttrs=&quot;1&quot; context=&quot;content/content&quot; args=&quot;content_id=1&quot;&gt;&lt;/page&gt;
+                        &lt;/__AUTO_INCREASE__&gt;
+                        &lt;__AUTO_INCREASE__&gt;
+                                &lt;parent_block_txt_id&gt;&lt;![CDATA[header_bottom]]&gt;&lt;/parent_block_txt_id&gt;
+                                &lt;template&gt;&lt;![CDATA[blocks/bestseller_home.tpl]]&gt;&lt;/template&gt;
+                        &lt;/__AUTO_INCREASE__&gt;
+                &lt;/custom_templates&gt;
+        &lt;/block&gt;
+&lt;/blocks&gt;
+</pre></div>
+</div>
+<p><em>Giải thích</em>:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">block_txt_id</span></code> - txt id của block.</li>
+<li><code class="docutils literal"><span class="pre">controller</span></code> -  controller hiển thị nội dung block.</li>
+<li><code class="docutils literal"><span class="pre">templates</span></code> - Khai báo parent block và template mặc định của block hiển thị ở vị trí đó, trong mỗi cặp thẻ <code class="docutils literal"><span class="pre">&lt;__AUTO_INCREASE__</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">custom_templates</span></code> - khai báo các template đã thêm ngoài template mặc định của block vào đây.</li>
+</ul>
+<p>Để block này có hiệu lực, bạn sẽ nạp lại cấu hình bằng cách truy cập <strong>Design &gt; My Settings &gt; Install &amp; Configure</strong> nhấn vào tab <strong>Refresh Extensions</strong> và click <strong>Refresh Blocks</strong></p>
+<p>Ok, quay trở lại trang layout trong admin, chọn layout trong danh sách bạn sẽ thấy bổ xung các layout mới.</p>
+<img alt="_images/vnc-layouts.jpg" src="_images/vnc-layouts.jpg" />
+<div class="section" id="cau-hinh-block">
+<h3>Cấu hình block<a class="headerlink" href="#cau-hinh-block" title="Permalink to this headline">¶</a></h3>
+<p>Tất cả các blocks sẽ sử dụng chung cấu hình của vinacart mà bạn đã thiết lập (tại Admin URL: /index.php?rt=setting/setting/all).
+Đôi khi một vài block sẽ cần thay đổi lại giá trị, chẳng hạn như block bestseller, latest nằm ở cột trái (column_left) kích thước ảnh theo thiết kế theme là nhỏ hơn so với hiển thị products ở trang chủ, trang danh mục sản phẩm.</p>
+<p>Kích thước ảnh này quy định bởi cấu hình <em>config_image_product_width</em>, <em>config_image_product_height</em>. Bạn có thể dễ dàng thay đổi thông số này áp dụng cho parent block &amp; child block, giống như sau:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;blocks&gt;
+        &lt;!-- apply to parent blocks --&gt;
+        &lt;block&gt;
+                &lt;block_txt_id&gt;&lt;![CDATA[column_left]]&gt;&lt;/block_txt_id&gt;
+                &lt;controller&gt;common/column_left&lt;/controller&gt;
+
+                &lt;config&gt;
+                        &lt;param name=&quot;config_image_product_width&quot;&gt;&lt;![CDATA[100]]&gt;&lt;/param&gt;
+                        &lt;param name=&quot;config_image_product_height&quot;&gt;&lt;![CDATA[95]]&gt;&lt;/param&gt;
+                &lt;/config&gt;
+        &lt;/block&gt;
+        &lt;!-- apply for block --&gt;
+        &lt;block&gt;
+    &lt;block_txt_id&gt;&lt;![CDATA[latest]]&gt;&lt;/block_txt_id&gt;
+    &lt;controller&gt;blocks/latest&lt;/controller&gt;
+
+    &lt;config&gt;
+        &lt;param name=&quot;config_image_product_width&quot;&gt;&lt;![CDATA[product_small_image_width]]&gt;&lt;/param&gt;
+        &lt;param name=&quot;config_image_product_height&quot;&gt;&lt;![CDATA[product_small_image_height]]&gt;&lt;/param&gt;
+    &lt;/config&gt;
+        &lt;/block&gt;
+
+&lt;/blocks&gt;
+</pre></div>
+</div>
+<p>Lưu ý: với mỗi kích thước tạo ra sẽ tạo thêm ảnh mới tương ứng với kích thước đó, cho nên hãy cẩn trọng để tránh gây thừa dung lượng. Nếu bạn sử dụng nhiều lần giá trị cấu hình cách tốt nhất thiết vào biến để tránh viết nhầm giá trị.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>    &lt;configuration&gt;
+    &lt;item name=&quot;image_product_width_small&quot; value=&quot;100&quot;/&gt;
+    &lt;item name=&quot;image_product_height_small&quot; value=&quot;95&quot;/&gt;
+&lt;/configuration&gt;
+    &lt;block&gt;
+            ..
+            &lt;config&gt;
+            &lt;param name=&quot;config_image_product_width&quot;&gt;&lt;![CDATA[image_product_width_small]]&gt;&lt;/param&gt;
+            &lt;param name=&quot;config_image_product_height&quot;&gt;&lt;![CDATA[image_product_height_small]]&gt;&lt;/param&gt;
+        &lt;/config&gt;
+    &lt;/block&gt;
+</pre></div>
+</div>
+<p>Bạn cũng có thể thay đổi giá trị cài đặt ở từng vị trí parent, bằng cách khai báo giá trị trong thẻ <code class="docutils literal"><span class="pre">&lt;skin&gt;</span></code>.</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><blockquote class="first">
+<div><p>&lt;skin&gt;
+&lt;_AI_&gt;</p>
+<blockquote>
+<div><p>&lt;name&gt;&lt;![CDATA[sb_flat]]&gt;&lt;/name&gt;
+&lt;position&gt;&lt;![CDATA[content_bottom]]&gt;&lt;/position&gt;
+&lt;config&gt;</p>
+<blockquote>
+<div>&lt;param name=&#8221;blog_entry_image_width&#8221;&gt;&lt;![CDATA[blog_entry_image_width]]&gt;&lt;/param&gt;
+&lt;param name=&#8221;blog_entry_image_height&#8221;&gt;&lt;![CDATA[blog_entry_image_height]]&gt;&lt;/param&gt;</div></blockquote>
+<p>&lt;/config&gt;</p>
+</div></blockquote>
+<p>&lt;/_AI_&gt;
+&lt;_AI_&gt;</p>
+<blockquote>
+<div><p>&lt;name&gt;&lt;![CDATA[sb]]&gt;&lt;/name&gt;
+&lt;position&gt;&lt;![CDATA[column_left]]&gt;&lt;/position&gt;
+&lt;config&gt;</p>
+<blockquote>
+<div>&lt;param name=&#8221;blog_entry_image_width&#8221;&gt;&lt;![CDATA[blog_entry_small_image_width]]&gt;&lt;/param&gt;
+&lt;param name=&#8221;blog_entry_image_height&#8221;&gt;&lt;![CDATA[blog_entry_small_image_height]]&gt;&lt;/param&gt;</div></blockquote>
+<p>&lt;/config&gt;</p>
+</div></blockquote>
+<p>&lt;/_AI_&gt;</p>
+</div></blockquote>
+<p class="last">&lt;/skin&gt;</p>
+</dd>
+</dl>
+<p>Xem thêm block skin ở phần dưới.</p>
+</div>
+<div class="section" id="block-skin">
+<h3>Block Skin<a class="headerlink" href="#block-skin" title="Permalink to this headline">¶</a></h3>
+<p>Kế thừa hầu hết các cms hiện nay như wordpress, bạn có thể khai báo giao diện sidebar dễ dàng với vinacart. Thiết lập trong file cấu hình (<code class="docutils literal"><span class="pre">theme.xml</span></code>)</p>
+<p>Khai báo các skin sử dụng cho theme:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>    &lt;block_skins&gt;
+    &lt;skin name=&quot;skin1&quot;&gt;
+        &lt;param name=&quot;before_title&quot;&gt;&lt;![CDATA[&lt;div class=&quot;title %2$s&quot; &gt;&lt;h2&gt;]]&gt;&lt;/param&gt;
+        &lt;param name=&quot;after_title&quot;&gt;&lt;![CDATA[&lt;/h2&gt;&lt;/div&gt;]]&gt;&lt;/param&gt;
+        &lt;param name=&quot;before_widget&quot;&gt;&lt;![CDATA[&lt;div id=&quot;%1$s&quot; class=&quot;block %2$s&quot; &gt;]]&gt;&lt;/param&gt;
+        &lt;param name=&quot;after_widget&quot;&gt;&lt;![CDATA[&lt;/div&gt;]]&gt;&lt;/param&gt;
+    &lt;/skin&gt;
+    &lt;skin name=&quot;sidebar&quot;&gt;
+        &lt;param name=&quot;before_title&quot;&gt;&lt;![CDATA[&lt;h3 class=&quot;%2$s&quot;&gt;]]&gt;&lt;/param&gt;
+        &lt;param name=&quot;after_title&quot;&gt;&lt;![CDATA[&lt;/h3&gt;]]&gt;&lt;/param&gt;
+        &lt;param name=&quot;before_widget&quot;&gt;&lt;![CDATA[&lt;div id=&quot;%1$s&quot; class=&quot;aa-sidebar-widget %2$s&quot;&gt;]]&gt;&lt;/param&gt;
+        &lt;param name=&quot;after_widget&quot;&gt;&lt;![CDATA[&lt;/div&gt;]]&gt;&lt;/param&gt;
+    &lt;/skin&gt;
+
+    &lt;skin name=&quot;footer&quot;&gt;
+        &lt;param name=&quot;before_title&quot;&gt;&lt;![CDATA[&lt;h3 class=&quot;%2$s&quot;&gt;]]&gt;&lt;/param&gt;
+        &lt;param name=&quot;after_title&quot;&gt;&lt;![CDATA[&lt;/h3&gt;]]&gt;&lt;/param&gt;
+        &lt;param name=&quot;before_widget&quot;&gt;&lt;![CDATA[&lt;div id=&quot;%1$s&quot; class=&quot;aa-footer-widget %2$s&quot;&gt;]]&gt;&lt;/param&gt;
+        &lt;param name=&quot;after_widget&quot;&gt;&lt;![CDATA[&lt;/div&gt;]]&gt;&lt;/param&gt;
+    &lt;/skin&gt;
+    &lt;skin name=&quot;blog_sidebar&quot;&gt;
+        &lt;param name=&quot;before_title&quot;&gt;&lt;![CDATA[&lt;h3 class=&quot;%2$s&quot;&gt;]]&gt;&lt;/param&gt;
+        &lt;param name=&quot;after_title&quot;&gt;&lt;![CDATA[&lt;/h3&gt;]]&gt;&lt;/param&gt;
+        &lt;param name=&quot;before_widget&quot;&gt;&lt;![CDATA[&lt;div id=&quot;%1$s&quot; class=&quot;aa-sidebar-widget %2$s&quot;&gt;]]&gt;&lt;/param&gt;
+        &lt;param name=&quot;after_widget&quot;&gt;&lt;![CDATA[&lt;/div&gt;]]&gt;&lt;/param&gt;
+    &lt;/skin&gt;
+&lt;/block_skins&gt;
+</pre></div>
+</div>
+<p>Áp dụng skin vào parent block.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;blocks&gt;
+        &lt;block&gt;
+                &lt;block_txt_id&gt;&lt;![CDATA[header]]&gt;&lt;/block_txt_id&gt;
+                &lt;controller&gt;common/header&lt;/controller&gt;
+                &lt;skin&gt;
+                        &lt;name&gt;&lt;![CDATA[skin1]]&gt;&lt;/name&gt;
+                        &lt;values&gt;
+                                &lt;param name=&quot;before_title&quot;&gt;&lt;![CDATA[block1]]&gt;&lt;/param&gt;
+                                &lt;param name=&quot;before_widget&quot;&gt;&lt;![CDATA[block_1]]&gt;&lt;/param&gt;
+                        &lt;/values&gt;
+                &lt;/skin&gt;
+        &lt;/block&gt;
+        &lt;block&gt;
+                &lt;block_txt_id&gt;&lt;![CDATA[column_left]]&gt;&lt;/block_txt_id&gt;
+                &lt;controller&gt;common/column_left&lt;/controller&gt;
+                &lt;skin&gt;
+                        &lt;name&gt;&lt;![CDATA[sidebar]]&gt;&lt;/name&gt;
+                        &lt;values&gt;
+                                &lt;param name=&quot;before_title&quot;&gt;&lt;![CDATA[block1]]&gt;&lt;/param&gt;
+                                &lt;param name=&quot;before_widget&quot;&gt;&lt;![CDATA[block_1]]&gt;&lt;/param&gt;
+                        &lt;/values&gt;
+                &lt;/skin&gt;
+                &lt;config&gt;
+                        &lt;param name=&quot;config_image_product_width&quot;&gt;&lt;![CDATA[100]]&gt;&lt;/param&gt;
+                        &lt;param name=&quot;config_image_product_height&quot;&gt;&lt;![CDATA[95]]&gt;&lt;/param&gt;
+                &lt;/config&gt;
+        &lt;/block&gt;
+        &lt;block&gt;
+                &lt;block_txt_id&gt;&lt;![CDATA[column_right]]&gt;&lt;/block_txt_id&gt;
+                &lt;controller&gt;common/column_right&lt;/controller&gt;
+                &lt;skin&gt;
+                        &lt;name&gt;&lt;![CDATA[blog_sidebar]]&gt;&lt;/name&gt;
+                        &lt;values&gt;
+                                &lt;param name=&quot;before_title&quot;&gt;&lt;![CDATA[block1]]&gt;&lt;/param&gt;
+                                &lt;param name=&quot;before_widget&quot;&gt;&lt;![CDATA[block_1]]&gt;&lt;/param&gt;
+                        &lt;/values&gt;
+                &lt;/skin&gt;
+        &lt;/block&gt;
+        ..
+&lt;/blocks&gt;
+</pre></div>
+</div>
+<p>Chú ý: giá trị biến <code class="docutils literal"><span class="pre">before_title</span></code>, <code class="docutils literal"><span class="pre">after_title</span></code> ở thẻ <code class="docutils literal"><span class="pre">&lt;param</span></code> tương ứng với biến <code class="docutils literal"><span class="pre">%2$s</span></code>.</p>
+<p>Trong file .tpl để hiển thị skin chúng ta có các biến:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{{</span><span class="n">before_widget</span><span class="p">}}</span>
+        <span class="o">..</span>
+        <span class="p">{{</span> <span class="n">before_title</span><span class="p">}}{{</span> <span class="n">heading_title</span> <span class="p">}}</span> <span class="p">{{</span> <span class="n">after_title</span><span class="p">}}</span>
+        <span class="o">..</span>
+<span class="p">{{</span><span class="n">after_widget</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p>Khi đặt block ở 2 vị trí khác nhau mà chúng đều hiển thị vào một file, vd: bestseller block ở column_left &amp; column_right đều gọi vào bestseller.tpl. Trường hợp này bạn cũng có thể sử dụng 2 template khác nhau cho một block ở các vị trí parent khác nhau và khai báo sử dụng nhiều skin. Chúng ta sẽ thay đổi skin với nhiều vị trí, như sau:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;skin&gt;
+        &lt;_AI_&gt;
+                &lt;name&gt;&lt;![CDATA[sb]]&gt;&lt;/name&gt;
+                &lt;position&gt;&lt;![CDATA[column_left]]&gt;&lt;/position&gt;
+                &lt;template&gt;&lt;![CDATA[blocks/bestseller_slides.tpl]]&gt;&lt;/template&gt;
+                &lt;values&gt;
+                        &lt;param name=&quot;before_title&quot;&gt;&lt;![CDATA[]]&gt;&lt;/param&gt;
+                        &lt;param name=&quot;before_widget&quot;&gt;&lt;![CDATA[special-product best-sale-product]]&gt;&lt;/param&gt;
+                &lt;/values&gt;
+        &lt;/_AI_&gt;
+        &lt;_AI_ &gt;
+                &lt;name&gt;&lt;![CDATA[sb_flat]]&gt;&lt;/name&gt;
+                &lt;position&gt;&lt;![CDATA[column_right]]&gt;&lt;/position&gt;
+                &lt;template&gt;&lt;![CDATA[blocks/bestseller.tpl]]&gt;&lt;/template&gt;
+                &lt;values&gt;
+                        &lt;param name=&quot;before_title&quot;&gt;&lt;![CDATA[]]&gt;&lt;/param&gt;
+                        &lt;param name=&quot;before_widget&quot;&gt;&lt;![CDATA[special-product new-product]]&gt;&lt;/param&gt;
+                &lt;/values&gt;
+        &lt;/_AI_&gt;
+&lt;/skin&gt;
+</pre></div>
+</div>
+<p>Chú ý: <code class="docutils literal"><span class="pre">&lt;_AI_&gt;</span></code> alias của <code class="docutils literal"><span class="pre">&lt;__AUTO_INCREASE__&gt;</span></code></p>
+</div>
+</div>
+<div class="section" id="image-configuration">
+<h2>Image Configuration<a class="headerlink" href="#image-configuration" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">config_image_thumb_width|     config_image_thumb_height</p>
+<blockquote>
+<div><ul class="simple">
+<li>thumb image for product page.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">config_image_popup_width|     config_image_popup_height</p>
+<blockquote>
+<div><ul class="simple">
+<li>(listing_block) main image with media resource type for current object in page.</li>
+<li>main image for product page.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">config_image_product_width|config_image_product_height</p>
+<blockquote>
+<div><ul class="simple">
+<li>thumb image used in block: bestseller, featured, latest, special, listing_block (for product).</li>
+<li>thumb for products listing in category|manufacturer|search|special page</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">config_image_additional_width|config_image_additional_height</p>
+<blockquote>
+<div><ul class="simple">
+<li>thumb image in block cart</li>
+<li>additional thumb images in product page.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">config_image_related_width|config_image_related_height</p>
+<blockquote>
+<div><ul class="simple">
+<li>main image for related products in product page.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">config_image_cart_width|config_image_cart_height</p>
+<blockquote>
+<div><ul class="simple">
+<li>list product in account page: cart, download, invoice, wishlist, confirm, guest_step_3</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">config_image_grid_width|config_image_grid_height</p>
+<blockquote>
+<div><ul class="simple">
+<li>block manufacturer</li>
+<li>image in manufacturer page.</li>
+<li>list manufacturer images in product page.</li>
+<li>(admin) in all grid list with image support.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">config_image_category_width|config_image_category_height</p>
+<blockquote>
+<div><ul class="simple">
+<li>block category, listing_block (for category)</li>
+<li>list subcategories in category page.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">config_image_manufacturer_width|config_image_manufacturer_height</p>
+<blockquote>
+<div><ul class="simple">
+<li>listing_block (for manufacturer)</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p><em>Conclusion</em>:</p>
+<p>blocks: cart, category, bestseller (featured, latest, special), listing_block, manufacturer
+pages:</p>
+<blockquote>
+<div>single product
+products listing page (category|manufacturer..)
+account pages (cart, download, invoice, wishlist, confirm, guest_step_3)</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="global-config.html" class="btn btn-neutral float-right" title="General" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="getting-start.html" class="btn btn-neutral" title="Getting start" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, VinaCart.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

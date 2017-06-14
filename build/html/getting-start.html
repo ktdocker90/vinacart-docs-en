@@ -1,0 +1,263 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting start &mdash; Vinacart Docs 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Vinacart Docs 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Cấu hình theme" href="theme-config.html"/>
+        <link rel="prev" title="Cấu trúc theme" href="vinacart-theme-structure.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Vinacart Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="cai-dat-vinacart.html">Vinacart Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Cấu trúc theme</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rename-file-and-folder">Rename file and folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#edit-content">Edit content</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#language">Language</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#core-themeextension-php">core/ThemeExtension.php</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="theme-config.html">Cấu hình theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global-config.html">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build-tool.html">Build theme automation tool</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Vinacart Docs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Getting start</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/getting-start.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-start">
+<h1>Getting start<a class="headerlink" href="#getting-start" title="Permalink to this headline">¶</a></h1>
+<p>Create a new theme named (eg: theme1) by duplicating * mytheme / <a href="#id1"><span class="problematic" id="id2">*</span></a>.</p>
+<div class="section" id="rename-file-and-folder">
+<h2>Rename file and folder<a class="headerlink" href="#rename-file-and-folder" title="Permalink to this headline">¶</a></h2>
+<p>Note that after copying the theme, you need to rename the folder and file to match the new theme (theme1). Convert `` mytheme`` to `` theme1`` with the following files and folders:</p>
+<ul class="simple">
+<li>admin/language/english/mytheme/</li>
+<li>admin/language/english/mytheme/mytheme.xml</li>
+<li>admin/language/vietnamese/mytheme/</li>
+<li>admin/language/vietnamese/mytheme/mytheme.xml</li>
+<li>storefront/language/english/mytheme</li>
+<li>storefront/language/vietnamese/mytheme</li>
+<li>storefront/view/mytheme</li>
+</ul>
+</div>
+<div class="section" id="edit-content">
+<h2>Edit content<a class="headerlink" href="#edit-content" title="Permalink to this headline">¶</a></h2>
+<p>Find &amp; rename <code class="docutils literal"><span class="pre">mytheme</span></code> to <code class="docutils literal"><span class="pre">theme1</span></code> in the found files.</p>
+<p>Find &amp; rename <code class="docutils literal"><span class="pre">mytheme</span></code> to <code class="docutils literal"><span class="pre">theme1</span></code> in the file config.xml and main.php</p>
+<div class="section" id="language">
+<h3>Language<a class="headerlink" href="#language" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>admin/language/english/theme1/theme1.xml</li>
+<li>admin/language/vietnamese/theme1/theme1.xml</li>
+</ul>
+<p>Use language files for both admin &amp; frontend.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;definitions&gt;
+    &lt;definition&gt;
+        &lt;key&gt;theme1_name&lt;/key&gt;&lt;!-- mytheme -&gt; theme1 --&gt;
+        &lt;value&gt;&lt;![CDATA[my theme]]&gt;&lt;/value&gt;
+    &lt;/definition&gt;
+    ...
+</pre></div>
+</div>
+</div>
+<div class="section" id="core-themeextension-php">
+<h3>core/ThemeExtension.php<a class="headerlink" href="#core-themeextension-php" title="Permalink to this headline">¶</a></h3>
+<p>This is entry file when the theme is loaded. In the file define class named `` Extension &lt;theme_name&gt; <a href="#id3"><span class="problematic" id="id4">``</span></a>.
+ex: mytheme -&gt; ExtensionMytheme, theme1 -&gt; ExtensionTheme1</p>
+<p>Edit the class name that matches your theme name.</p>
+<p>Ok, you are done, next we will focus on writing template for the theme.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="theme-config.html" class="btn btn-neutral float-right" title="Cấu hình theme" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="vinacart-theme-structure.html" class="btn btn-neutral" title="Cấu trúc theme" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, VinaCart.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
