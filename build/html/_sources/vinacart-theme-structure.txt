@@ -1,44 +1,40 @@
 ========================================== 
-Cấu trúc theme
+Theme Development
 ==========================================
 
-Theme được viết dưới dạng extension, cấu trúc của một theme giống với
-cấu trúc 1 extension gồm có:
+Theme is written in the form of an extension, the structure of a theme similar to
+an standard extension structure, consists of:
 
--  admin/ - cấu trúc MVC sử lý phần backend.
-    -  controller/ - chứa files php (controllers)
-    -  model/ - chứa files php (models)
-    -  view/ - files .tpl hiển thị dữ liệu
-    -  language/ - files .xml chứa ngôn ngữ dịch.
--  core/ - chứa hooks.
--  storefront/ - cấu trúc MVC sử lý ở frontend (website)
-    - Cấu trúc tương tự ``admin/``
-    - language/ - chứa ngôn ngữ dịch.
+-  admin/ - MVC for backend.
+    -  controller/ - contain controllers php files
+    -  model/ - contain models php files
+    -  view/ - contain .tpl files to display data
+    -  language/ - language definition (.xml).
+-  core/
+-  storefront/ - MVC for frontend (website)
+    - similar to ``admin/``
+    - language/ - language definition.
         - english/
-        - vietnamese/
     - view
-        - ``<theme_name>``/ - chú ý cần trùng với tên thư mục theme. Bạn sẽ làm việc với thư mục này để thiết kế template.
+        - ``<theme_name>``/ - need to match the name of the theme folder. You will work with this directory to design the template.
 
-- data/ - chứa dữ liệu mẫu của theme (sử dụng trong quá trình cài đặt).
-    - blocks.xml - lưu toàn bộ khai báo blocks.
-    - layout.xml - lưu layout & pages.
-    - datasets.xml - lưu cấu hình blocks.
+- data/ - Contains sample template data (used during installation).
+    - blocks.xml - blocks data.
+    - layout.xml - save layout & pages.
+    - datasets.xml - blocks configuration.
 
 - image/
-    - icon.png - icon của theme.
-    - chứa các ảnh khác.
+    - icon.png - theme icon.
 
--  config.xml - thông tin theme
--  install.php - code sử lý khi cài đặt theme.
--  install.sql - import sql data khi cài đặt theme.
--  uninstall.php - code sử lý khi hủy cài đặt theme.
--  uninstall.sql - chạy lệnh sql khi hủy cài đặt theme.
--  main.php - Khai báo các files php, .tpl có sử dụng
--  icon.png - ảnh đại diện của theme.
--  theme.xml - thông tin cơ bản về theme.
+-  config.xml - extension configuration
+-  install.php - run during installation.
+-  install.sql - run during installation.
+-  uninstall.php - run during uninstall.
+-  uninstall.sql - run during uninstall.
+-  main.php - declare all files used in extension
+-  icon.png - extension icon.
+-  theme.xml - theme information.
 
-
-Xem extension ``mytheme`` (extensions/mytheme) để tham khảo cách viết một theme mẫu.
 
 config.xml
 ^^^^^^^^^^
@@ -86,32 +82,31 @@ config.xml
       </uninstall>
     </extension>
 
-Bạn sửa các thông tin sau đây:
+You correct the following information:
 
--  ``id`` - id của theme là tên thư mục của theme (viết liền không chứa dấu cách).
--  ``version`` - phiên bản theme
--  ``preview`` - thêm ảnh đại diện cho theme. Ảnh nằm trong thư mục image/
+-  ``id`` - extension id (refer to theme directory).
+-  ``version`` - extension version.
+-  ``preview`` - theme preview. List images in directory image/
 
 
-Các thông số khác dữ nguyên. VD:
+Do not modify other info such as:
 
-- ``type`` - kiểu *template*
-- ``category`` - nằm trong danh mục *template*.
+- ``type`` - *template*
+- ``category`` - extension category. *template*.
 
 main.php
 ^^^^^^^^
 
-Tại đây bạn khai báo toàn bộ các files *.php, *.tpl thuộc controller, model, template & language. Mỗi biến có 2 phần ``storefront`` & ``admin`` dành cho admin và frontend.
+Here you declare all the files *.php, *.tpl for controller, model, template & language.
 
 .. code-block:: php
 
-    //quy định template không viết hành động
+    //extension theme should no write controller
    $controllers = array( 
       'storefront' => array(), 
       'admin' => array()
     );
 
-    //quy định template không viết model
    $models = array( 'storefront' => array(), 'admin' => array());
 
    $templates = array( 
@@ -121,10 +116,10 @@ Tại đây bạn khai báo toàn bộ các files *.php, *.tpl thuộc controlle
         ..
    ), 
     'admin' => array(
-      //quy định template thì không viết cho admin
+      //template not for admin
    ) );
 
-Chú ý: tạo thêm file (php, tpl) khác phải khai báo đầy đủ vào đây.
+Notice: Create another file (php, tpl) must be fully declared here.
 
 theme.xml
 ^^^^^^^^^
@@ -138,5 +133,3 @@ theme.xml
         <screenshot>screenshot.jpg</screenshot><!-- image/icon.png -->
     </theme>
 
-Phần nội dung này được hiển thị trên themes stores của chúng tôi, một khi theme được public lên server. Bạn khai báo tên, mô tả,
-version và hình xem trước. Xem tiếp `Thiết lập file cấu hình cho theme <theme-config.html>`_

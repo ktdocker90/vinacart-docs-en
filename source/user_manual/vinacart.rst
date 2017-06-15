@@ -2,7 +2,7 @@
 Vinacart (VNC Theme Framework)
 =========================
 
-Required PHP 5.6+
+Required PHP minimum version is 5.6+
 
 Featured
 ^^^^^^^^

@@ -34,8 +34,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Vinacart Docs 1.0 documentation" href="index.html"/>
-        <link rel="next" title="Build theme automation tool" href="build-tool.html"/>
-        <link rel="prev" title="Sử dụng layout blocks" href="intro-layout-blocks.html"/> 
+        <link rel="prev" title="Using layout blocks" href="intro-layout-blocks.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -85,17 +84,17 @@
             
             
                 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="user_manual/vinacart.html">Vinacart (VNC Theme Framework)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cai-dat-vinacart.html">Vinacart Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Cấu trúc theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Theme Development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-start.html">Getting start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="theme-config.html">Cấu hình theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theme-config.html">Theme Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="global-config.html">General</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Using layout blocks</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Template</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#bien-su-dung-trong-template">Biến sử dụng trong template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#variable-used-in-template">Variable used in template</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="build-tool.html">Build theme automation tool</a></li>
 </ul>
 
             
@@ -142,9 +141,9 @@
             
   <div class="section" id="template">
 <h1>Template<a class="headerlink" href="#template" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="bien-su-dung-trong-template">
-<h2>Biến sử dụng trong template<a class="headerlink" href="#bien-su-dung-trong-template" title="Permalink to this headline">¶</a></h2>
-<p>Biến toàn cục: <code class="docutils literal"><span class="pre">$vnc</span></code> truy cập ở mọi template (.tpl).</p>
+<div class="section" id="variable-used-in-template">
+<h2>Variable used in template<a class="headerlink" href="#variable-used-in-template" title="Permalink to this headline">¶</a></h2>
+<p>Global variable: <code class="docutils literal"><span class="pre">$vnc</span></code> can be access in any (.tpl) files.</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="nx">vnc</span> <span class="o">%</span><span class="p">}</span>
       <span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;product&#39;</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
         <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;product&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">name</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">h3</span><span class="o">&gt;</span>
@@ -173,7 +172,7 @@
 <span class="p">{</span><span class="o">%</span> <span class="k">endif</span> <span class="o">%</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Lấy nội dung bất kỳ block nào trong page.tpl (ngoại trừ parent block (column_left, ..))</p>
+<p>Get any block content in page.tpl (except parent block (column_left, ..))</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">//parent block, child block index: deprecated</span>
 <span class="p">{</span><span class="c1"># vnc._view.loadBlock(&#39;header_bottom&#39;, 0) #}</span>
 
@@ -206,12 +205,12 @@
 </pre></div>
 </div>
 <p><strong>Model</strong></p>
-<p>Truy cập model.</p>
+<p>Access model.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">getModel</span><span class="p">(</span><span class="s1">&#39;catalog/product&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">getProduct</span><span class="p">(</span><span class="s1">&#39;&lt;ID&gt;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Components</strong>.</p>
-<p>Ngoài các blocks có sẵn trong layout, chúng tôi cho phép nạp một số block mà không cần thêm vào layout. Thành phần hiển thị như comment,..</p>
+<p>In addition to the blocks available in the layout, we allow loading of blocks without adding to the layout. Display element as comment, ..</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">loadView</span><span class="p">(</span><span class="s1">&#39;comment&#39;</span><span class="p">)</span> <span class="p">}}</span>
 <span class="p">{{</span> <span class="n">loadView</span><span class="p">(</span><span class="s1">&#39;social_button&#39;</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
@@ -268,10 +267,8 @@ str_replace_first($find, $replace, $object)
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="build-tool.html" class="btn btn-neutral float-right" title="Build theme automation tool" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="intro-layout-blocks.html" class="btn btn-neutral" title="Sử dụng layout blocks" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="intro-layout-blocks.html" class="btn btn-neutral" title="Using layout blocks" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

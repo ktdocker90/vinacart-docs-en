@@ -1,8 +1,8 @@
 =====================
-Sử dụng layout blocks
+Using layout blocks
 =====================
 
-Danh sách blocks bạn có thể sử dụng:
+List of blocks you can use:
 
 - customer
 - menu
@@ -27,14 +27,14 @@ Danh sách blocks bạn có thể sử dụng:
 - listing_block
   ..
 
-Tùy chỉnh giao diện block
-=========================
+Block Configuration
+===================
 
-Hiện tại áp dụng cho 2 block ``listing_data`` & ``banner_block``. Tùy chỉnh giao diện block cho phép chúng ta đưa thêm trường vào trang edit block và sử dụng các thư viện jquery theo ý muốn.
+Currently applied to twos blocks ``listing_data`` & ``banner_block``. Allows us to add more fields to the edit block page and use the jquery library of our choice for that block on storefront.
 
-Chúng tôi đưa sẵn các thư viện javascript đáp ứng nhu cầu làm theme phong phú, để nạp một thư viện nào đó bạn chỉ cần khai báo bởi tên. Điều này tránh trùng lặp thư viện bạn chèn vào site.
+We provide javascript libraries that meet the needs of a rich theme, to load a library you just declared by name. This avoids duplicate libraries you insert into the site.
 
-Mỗi file .tpl có một file cấu hình cùng tên có định dạng .xml và nằm cùng thư mục với file template .tpl đó. VD: ta có file ``blocks/listing_block/main_categories.tpl`` tương ứng với file cấu hình ``blocks/listing_block/main_categories.xml``
+Each .tpl file has a configuration file of the same name in .xml format and resides in the same directory as the template .tpl file. Ex: we have a ``blocks/listing_block/main_categories.tpl`` Corresponds to the configuration file ``blocks/listing_block/main_categories.xml``
 
 ::
 
@@ -94,14 +94,14 @@ Mỗi file .tpl có một file cấu hình cùng tên có định dạng .xml v�
 	    </settings>
 	</block_config>
 
-Thẻ ``<name``, ``<description``, ``<author``, ``<preview``, ``<help`` hiển thị thông tin về block template. Ở trang sửa nội dung block, bạn sẽ nhìn thấy thông tin giao diện được tìm thấy.
+Tags ``<name``, ``<description``, ``<author``, ``<preview``, ``<help`` display information about block template. On the block content edit page, you will see the block tpl information if found.
 
 .. image:: images/vnc-block-template.png
 
 Assets
 ======
 
-Khai báo sử dụng thêm .css, .js và thư viện javascript khi block được load trong site. Bạn viết trong thẻ ``<scripts``.
+Declare to use .css, .js, and javascript library when the block is loaded in the site. You write in ``<scripts`` tag.
 
 ::
 
@@ -129,8 +129,8 @@ Khai báo sử dụng thêm .css, .js và thư viện javascript khi block đư�
 
 	</settings>
 
-Chú ý: đường dẫn file tương tự như file cấu hình theme `theme.xml <theme-config.html>`_
-Một số thư viện hay sử dụng:
+Note: The asset file path is similar to the theme configuration file `theme.xml <theme-config.html>`_
+Some good libraries use:
 
 - Background effects:
 
@@ -143,7 +143,7 @@ Một số thư viện hay sử dụng:
   - ``galleries/photor``
   - ...
 
-Tương tự, nếu bạn muốn bổ xung file của thư viện, khai báo đầy đủ như sau:
+Similarly, if you want to add library files, full declaration as follows:
 ::
 	
 	<item>
@@ -151,7 +151,7 @@ Tương tự, nếu bạn muốn bổ xung file của thư viện, khai báo đ�
 		<data>
 			<_AI_>
 				<param name="name"><![CDATA[sliders/nivoSlider]]></param>
-				<!-- mỗi file cách nhau dấu | -->
+				<!-- each file separate by | -->
                 <param name="styles"><![CDATA[light.css]]></param>
 			</_AI_>
 		</data>
@@ -161,7 +161,7 @@ Tương tự, nếu bạn muốn bổ xung file của thư viện, khai báo đ�
 Options
 =======
 
-Để đưa thêm option cho block, bạn khai báo trong thẻ ``<options``.
+To add an option to the block, you declare it in the ``<options`` tag.
 
 ::
 
@@ -189,11 +189,11 @@ Options
 		</item>
 	</options>
 
-Nếu bạn khai báo sử dụng thư viện, các thư viện có thể có thêm options sẽ được bổ xung vào các trường bạn đã khai báo ở trên. Chú ý: chỉ lấy options của thư viện đầu tiên.
+If you declare use of libraries, libraries may have additional options that will be added to the fields you have declared above. Note: Take only the options of the first library.
 
-**Sử dụng trong .tpl**
+**Js Options use in .tpl**
 
-Giá trị options bạn lưu với block, lưu trong biến ``$options``. Chẳng hạn bạn có thể sử dụng options để tùy chỉnh thư viện jquery.
+The options you save with blocks are stored in the ``$options`` variable. For example, you can use options to adjust the jquery library settings.
 
 *PHP*:
 

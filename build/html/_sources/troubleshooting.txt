@@ -1,5 +1,5 @@
 ==========================
-Sửa lỗi
+Troubleshooting
 ==========================
 
 **Lỗi không xem được nội dung website**

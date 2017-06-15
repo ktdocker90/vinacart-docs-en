@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Sử dụng layout blocks &mdash; Vinacart Docs 1.0 documentation</title>
+  <title>Using layout blocks &mdash; Vinacart Docs 1.0 documentation</title>
   
 
   
@@ -85,19 +85,19 @@
             
             
                 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="user_manual/vinacart.html">Vinacart (VNC Theme Framework)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cai-dat-vinacart.html">Vinacart Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Cấu trúc theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Theme Development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-start.html">Getting start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="theme-config.html">Cấu hình theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theme-config.html">Theme Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="global-config.html">General</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Sử dụng layout blocks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#tuy-chinh-giao-dien-block">Tùy chỉnh giao diện block</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using layout blocks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#block-configuration">Block Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#assets">Assets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#options">Options</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
-<li class="toctree-l1"><a class="reference internal" href="build-tool.html">Build theme automation tool</a></li>
 </ul>
 
             
@@ -128,7 +128,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Sử dụng layout blocks</li>
+    <li>Using layout blocks</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -142,9 +142,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="su-dung-layout-blocks">
-<h1>Sử dụng layout blocks<a class="headerlink" href="#su-dung-layout-blocks" title="Permalink to this headline">¶</a></h1>
-<p>Danh sách blocks bạn có thể sử dụng:</p>
+  <div class="section" id="using-layout-blocks">
+<h1>Using layout blocks<a class="headerlink" href="#using-layout-blocks" title="Permalink to this headline">¶</a></h1>
+<p>List of blocks you can use:</p>
 <ul class="simple">
 <li>customer</li>
 <li>menu</li>
@@ -167,11 +167,11 @@
 <li>listing_block
 ..</li>
 </ul>
-<div class="section" id="tuy-chinh-giao-dien-block">
-<h2>Tùy chỉnh giao diện block<a class="headerlink" href="#tuy-chinh-giao-dien-block" title="Permalink to this headline">¶</a></h2>
-<p>Hiện tại áp dụng cho 2 block <code class="docutils literal"><span class="pre">listing_data</span></code> &amp; <code class="docutils literal"><span class="pre">banner_block</span></code>. Tùy chỉnh giao diện block cho phép chúng ta đưa thêm trường vào trang edit block và sử dụng các thư viện jquery theo ý muốn.</p>
-<p>Chúng tôi đưa sẵn các thư viện javascript đáp ứng nhu cầu làm theme phong phú, để nạp một thư viện nào đó bạn chỉ cần khai báo bởi tên. Điều này tránh trùng lặp thư viện bạn chèn vào site.</p>
-<p>Mỗi file .tpl có một file cấu hình cùng tên có định dạng .xml và nằm cùng thư mục với file template .tpl đó. VD: ta có file <code class="docutils literal"><span class="pre">blocks/listing_block/main_categories.tpl</span></code> tương ứng với file cấu hình <code class="docutils literal"><span class="pre">blocks/listing_block/main_categories.xml</span></code></p>
+<div class="section" id="block-configuration">
+<h2>Block Configuration<a class="headerlink" href="#block-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Currently applied to twos blocks <code class="docutils literal"><span class="pre">listing_data</span></code> &amp; <code class="docutils literal"><span class="pre">banner_block</span></code>. Allows us to add more fields to the edit block page and use the jquery library of our choice for that block on storefront.</p>
+<p>We provide javascript libraries that meet the needs of a rich theme, to load a library you just declared by name. This avoids duplicate libraries you insert into the site.</p>
+<p>Each .tpl file has a configuration file of the same name in .xml format and resides in the same directory as the template .tpl file. Ex: we have a <code class="docutils literal"><span class="pre">blocks/listing_block/main_categories.tpl</span></code> Corresponds to the configuration file <code class="docutils literal"><span class="pre">blocks/listing_block/main_categories.xml</span></code></p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;block_config&gt;
     &lt;name&gt;test 4&lt;/name&gt;
@@ -229,12 +229,12 @@
 &lt;/block_config&gt;
 </pre></div>
 </div>
-<p>Thẻ <code class="docutils literal"><span class="pre">&lt;name</span></code>, <code class="docutils literal"><span class="pre">&lt;description</span></code>, <code class="docutils literal"><span class="pre">&lt;author</span></code>, <code class="docutils literal"><span class="pre">&lt;preview</span></code>, <code class="docutils literal"><span class="pre">&lt;help</span></code> hiển thị thông tin về block template. Ở trang sửa nội dung block, bạn sẽ nhìn thấy thông tin giao diện được tìm thấy.</p>
+<p>Tags <code class="docutils literal"><span class="pre">&lt;name</span></code>, <code class="docutils literal"><span class="pre">&lt;description</span></code>, <code class="docutils literal"><span class="pre">&lt;author</span></code>, <code class="docutils literal"><span class="pre">&lt;preview</span></code>, <code class="docutils literal"><span class="pre">&lt;help</span></code> display information about block template. On the block content edit page, you will see the block tpl information if found.</p>
 <img alt="_images/vnc-block-template.png" src="_images/vnc-block-template.png" />
 </div>
 <div class="section" id="assets">
 <h2>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h2>
-<p>Khai báo sử dụng thêm .css, .js và thư viện javascript khi block được load trong site. Bạn viết trong thẻ <code class="docutils literal"><span class="pre">&lt;scripts</span></code>.</p>
+<p>Declare to use .css, .js, and javascript library when the block is loaded in the site. You write in <code class="docutils literal"><span class="pre">&lt;scripts</span></code> tag.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>&lt;!-- theme setting --&gt;
 &lt;settings&gt;
         &lt;item&gt;
@@ -260,8 +260,8 @@
 &lt;/settings&gt;
 </pre></div>
 </div>
-<p>Chú ý: đường dẫn file tương tự như file cấu hình theme <a class="reference external" href="theme-config.html">theme.xml</a>
-Một số thư viện hay sử dụng:</p>
+<p>Note: The asset file path is similar to the theme configuration file <a class="reference external" href="theme-config.html">theme.xml</a>
+Some good libraries use:</p>
 <ul class="simple">
 <li>Background effects:<ul>
 <li><code class="docutils literal"><span class="pre">bg-effects/snow</span></code></li>
@@ -275,13 +275,13 @@ Một số thư viện hay sử dụng:</p>
 </ul>
 </li>
 </ul>
-<p>Tương tự, nếu bạn muốn bổ xung file của thư viện, khai báo đầy đủ như sau:</p>
+<p>Similarly, if you want to add library files, full declaration as follows:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>&lt;item&gt;
         &lt;type&gt;js_libs&lt;/type&gt;
         &lt;data&gt;
                 &lt;_AI_&gt;
                         &lt;param name=&quot;name&quot;&gt;&lt;![CDATA[sliders/nivoSlider]]&gt;&lt;/param&gt;
-                        &lt;!-- mỗi file cách nhau dấu | --&gt;
+                        &lt;!-- each file separate by | --&gt;
         &lt;param name=&quot;styles&quot;&gt;&lt;![CDATA[light.css]]&gt;&lt;/param&gt;
                 &lt;/_AI_&gt;
         &lt;/data&gt;
@@ -291,7 +291,7 @@ Một số thư viện hay sử dụng:</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<p>Để đưa thêm option cho block, bạn khai báo trong thẻ <code class="docutils literal"><span class="pre">&lt;options</span></code>.</p>
+<p>To add an option to the block, you declare it in the <code class="docutils literal"><span class="pre">&lt;options</span></code> tag.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>&lt;options&gt;
         &lt;item name=&quot;f1&quot;&gt;
                 &lt;type&gt;selectbox&lt;/type&gt;
@@ -317,9 +317,9 @@ Một số thư viện hay sử dụng:</p>
 &lt;/options&gt;
 </pre></div>
 </div>
-<p>Nếu bạn khai báo sử dụng thư viện, các thư viện có thể có thêm options sẽ được bổ xung vào các trường bạn đã khai báo ở trên. Chú ý: chỉ lấy options của thư viện đầu tiên.</p>
-<p><strong>Sử dụng trong .tpl</strong></p>
-<p>Giá trị options bạn lưu với block, lưu trong biến <code class="docutils literal"><span class="pre">$options</span></code>. Chẳng hạn bạn có thể sử dụng options để tùy chỉnh thư viện jquery.</p>
+<p>If you declare use of libraries, libraries may have additional options that will be added to the fields you have declared above. Note: Take only the options of the first library.</p>
+<p><strong>Js Options use in .tpl</strong></p>
+<p>The options you save with blocks are stored in the <code class="docutils literal"><span class="pre">$options</span></code> variable. For example, you can use options to adjust the jquery library settings.</p>
 <p><em>PHP</em>:</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
     <span class="err">$</span><span class="p">(</span><span class="nx">window</span><span class="p">)</span><span class="o">.</span><span class="nx">load</span><span class="p">(</span><span class="k">function</span> <span class="p">()</span> <span class="p">{</span>

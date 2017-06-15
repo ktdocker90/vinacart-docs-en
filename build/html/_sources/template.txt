@@ -3,10 +3,10 @@ Template
 ========
 
 
-Biến sử dụng trong template
-===========================
+Variable used in template
+=========================
 
-Biến toàn cục: ``$vnc`` truy cập ở mọi template (.tpl).
+Global variable: ``$vnc`` can be access in any (.tpl) files.
 
 .. code-block:: php
 
@@ -37,7 +37,7 @@ Biến toàn cục: ``$vnc`` truy cập ở mọi template (.tpl).
 	      {% endif %}
 	{% endif %}
 
-Lấy nội dung bất kỳ block nào trong page.tpl (ngoại trừ parent block (column_left, ..))
+Get any block content in page.tpl (except parent block (column_left, ..))
 
 .. code-block:: php
 
@@ -76,7 +76,7 @@ common template tag:
 
 **Model**
 
-Truy cập model.
+Access model.
 
 ::
 
@@ -84,7 +84,7 @@ Truy cập model.
 
 **Components**.
 
-Ngoài các blocks có sẵn trong layout, chúng tôi cho phép nạp một số block mà không cần thêm vào layout. Thành phần hiển thị như comment,..
+In addition to the blocks available in the layout, we allow loading of blocks without adding to the layout. Display element as comment, ..
 
 ::
 

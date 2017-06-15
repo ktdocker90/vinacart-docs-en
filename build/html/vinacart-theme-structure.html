@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Cấu trúc theme &mdash; Vinacart Docs 1.0 documentation</title>
+  <title>Theme Development &mdash; Vinacart Docs 1.0 documentation</title>
   
 
   
@@ -85,19 +85,19 @@
             
             
                 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="user_manual/vinacart.html">Vinacart (VNC Theme Framework)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cai-dat-vinacart.html">Vinacart Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Cấu trúc theme</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Theme Development</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#config-xml">config.xml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#main-php">main.php</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#theme-xml">theme.xml</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="getting-start.html">Getting start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="theme-config.html">Cấu hình theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theme-config.html">Theme Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="global-config.html">General</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Using layout blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
-<li class="toctree-l1"><a class="reference internal" href="build-tool.html">Build theme automation tool</a></li>
 </ul>
 
             
@@ -128,7 +128,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Cấu trúc theme</li>
+    <li>Theme Development</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -142,34 +142,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="cau-truc-theme">
-<h1>Cấu trúc theme<a class="headerlink" href="#cau-truc-theme" title="Permalink to this headline">¶</a></h1>
-<p>Theme được viết dưới dạng extension, cấu trúc của một theme giống với
-cấu trúc 1 extension gồm có:</p>
+  <div class="section" id="theme-development">
+<h1>Theme Development<a class="headerlink" href="#theme-development" title="Permalink to this headline">¶</a></h1>
+<p>Theme is written in the form of an extension, the structure of a theme similar to
+an standard extension structure, consists of:</p>
 <ul>
 <li><dl class="first docutils">
-<dt>admin/ - cấu trúc MVC sử lý phần backend.</dt>
+<dt>admin/ - MVC for backend.</dt>
 <dd><ul class="first last simple">
-<li>controller/ - chứa files php (controllers)</li>
-<li>model/ - chứa files php (models)</li>
-<li>view/ - files .tpl hiển thị dữ liệu</li>
-<li>language/ - files .xml chứa ngôn ngữ dịch.</li>
+<li>controller/ - contain controllers php files</li>
+<li>model/ - contain models php files</li>
+<li>view/ - contain .tpl files to display data</li>
+<li>language/ - language definition (.xml).</li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><p class="first">core/ - chứa hooks.</p>
+<li><p class="first">core/</p>
 </li>
 <li><dl class="first docutils">
-<dt>storefront/ - cấu trúc MVC sử lý ở frontend (website)</dt>
+<dt>storefront/ - MVC for frontend (website)</dt>
 <dd><ul class="first last">
-<li><p class="first">Cấu trúc tương tự <code class="docutils literal"><span class="pre">admin/</span></code></p>
+<li><p class="first">similar to <code class="docutils literal"><span class="pre">admin/</span></code></p>
 </li>
 <li><dl class="first docutils">
-<dt>language/ - chứa ngôn ngữ dịch.</dt>
+<dt>language/ - language definition.</dt>
 <dd><ul class="first last simple">
 <li>english/</li>
-<li>vietnamese/</li>
 </ul>
 </dd>
 </dl>
@@ -177,7 +176,7 @@ cấu trúc 1 extension gồm có:</p>
 <li><dl class="first docutils">
 <dt>view</dt>
 <dd><ul class="first last simple">
-<li><code class="docutils literal"><span class="pre">&lt;theme_name&gt;</span></code>/ - chú ý cần trùng với tên thư mục theme. Bạn sẽ làm việc với thư mục này để thiết kế template.</li>
+<li><code class="docutils literal"><span class="pre">&lt;theme_name&gt;</span></code>/ - need to match the name of the theme folder. You will work with this directory to design the template.</li>
 </ul>
 </dd>
 </dl>
@@ -187,11 +186,11 @@ cấu trúc 1 extension gồm có:</p>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>data/ - chứa dữ liệu mẫu của theme (sử dụng trong quá trình cài đặt).</dt>
+<dt>data/ - Contains sample template data (used during installation).</dt>
 <dd><ul class="first last simple">
-<li>blocks.xml - lưu toàn bộ khai báo blocks.</li>
-<li>layout.xml - lưu layout &amp; pages.</li>
-<li>datasets.xml - lưu cấu hình blocks.</li>
+<li>blocks.xml - blocks data.</li>
+<li>layout.xml - save layout &amp; pages.</li>
+<li>datasets.xml - blocks configuration.</li>
 </ul>
 </dd>
 </dl>
@@ -199,30 +198,28 @@ cấu trúc 1 extension gồm có:</p>
 <li><dl class="first docutils">
 <dt>image/</dt>
 <dd><ul class="first last simple">
-<li>icon.png - icon của theme.</li>
-<li>chứa các ảnh khác.</li>
+<li>icon.png - theme icon.</li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><p class="first">config.xml - thông tin theme</p>
+<li><p class="first">config.xml - extension configuration</p>
 </li>
-<li><p class="first">install.php - code sử lý khi cài đặt theme.</p>
+<li><p class="first">install.php - run during installation.</p>
 </li>
-<li><p class="first">install.sql - import sql data khi cài đặt theme.</p>
+<li><p class="first">install.sql - run during installation.</p>
 </li>
-<li><p class="first">uninstall.php - code sử lý khi hủy cài đặt theme.</p>
+<li><p class="first">uninstall.php - run during uninstall.</p>
 </li>
-<li><p class="first">uninstall.sql - chạy lệnh sql khi hủy cài đặt theme.</p>
+<li><p class="first">uninstall.sql - run during uninstall.</p>
 </li>
-<li><p class="first">main.php - Khai báo các files php, .tpl có sử dụng</p>
+<li><p class="first">main.php - declare all files used in extension</p>
 </li>
-<li><p class="first">icon.png - ảnh đại diện của theme.</p>
+<li><p class="first">icon.png - extension icon.</p>
 </li>
-<li><p class="first">theme.xml - thông tin cơ bản về theme.</p>
+<li><p class="first">theme.xml - theme information.</p>
 </li>
 </ul>
-<p>Xem extension <code class="docutils literal"><span class="pre">mytheme</span></code> (extensions/mytheme) để tham khảo cách viết một theme mẫu.</p>
 <div class="section" id="config-xml">
 <h2>config.xml<a class="headerlink" href="#config-xml" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
@@ -267,28 +264,27 @@ cấu trúc 1 extension gồm có:</p>
 &lt;/extension&gt;
 </pre></div>
 </div>
-<p>Bạn sửa các thông tin sau đây:</p>
+<p>You correct the following information:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">id</span></code> - id của theme là tên thư mục của theme (viết liền không chứa dấu cách).</li>
-<li><code class="docutils literal"><span class="pre">version</span></code> - phiên bản theme</li>
-<li><code class="docutils literal"><span class="pre">preview</span></code> - thêm ảnh đại diện cho theme. Ảnh nằm trong thư mục image/</li>
+<li><code class="docutils literal"><span class="pre">id</span></code> - extension id (refer to theme directory).</li>
+<li><code class="docutils literal"><span class="pre">version</span></code> - extension version.</li>
+<li><code class="docutils literal"><span class="pre">preview</span></code> - theme preview. List images in directory image/</li>
 </ul>
-<p>Các thông số khác dữ nguyên. VD:</p>
+<p>Do not modify other info such as:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">type</span></code> - kiểu <em>template</em></li>
-<li><code class="docutils literal"><span class="pre">category</span></code> - nằm trong danh mục <em>template</em>.</li>
+<li><code class="docutils literal"><span class="pre">type</span></code> - <em>template</em></li>
+<li><code class="docutils literal"><span class="pre">category</span></code> - extension category. <em>template</em>.</li>
 </ul>
 </div>
 <div class="section" id="main-php">
 <h2>main.php<a class="headerlink" href="#main-php" title="Permalink to this headline">¶</a></h2>
-<p>Tại đây bạn khai báo toàn bộ các files <a href="#id1"><span class="problematic" id="id2">*</span></a>.php, <a href="#id3"><span class="problematic" id="id4">*</span></a>.tpl thuộc controller, model, template &amp; language. Mỗi biến có 2 phần <code class="docutils literal"><span class="pre">storefront</span></code> &amp; <code class="docutils literal"><span class="pre">admin</span></code> dành cho admin và frontend.</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span> <span class="c1">//quy định template không viết hành động</span>
+<p>Here you declare all the files <a href="#id1"><span class="problematic" id="id2">*</span></a>.php, <a href="#id3"><span class="problematic" id="id4">*</span></a>.tpl for controller, model, template &amp; language.</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span> <span class="c1">//extension theme should no write controller</span>
 <span class="nv">$controllers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
    <span class="s1">&#39;storefront&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(),</span>
    <span class="s1">&#39;admin&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">()</span>
  <span class="p">);</span>
 
- <span class="c1">//quy định template không viết model</span>
 <span class="nv">$models</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span> <span class="s1">&#39;storefront&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(),</span> <span class="s1">&#39;admin&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">());</span>
 
 <span class="nv">$templates</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
@@ -298,11 +294,11 @@ cấu trúc 1 extension gồm có:</p>
      <span class="o">..</span>
 <span class="p">),</span>
  <span class="s1">&#39;admin&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-   <span class="c1">//quy định template thì không viết cho admin</span>
+   <span class="c1">//template not for admin</span>
 <span class="p">)</span> <span class="p">);</span>
 </pre></div>
 </div>
-<p>Chú ý: tạo thêm file (php, tpl) khác phải khai báo đầy đủ vào đây.</p>
+<p>Notice: Create another file (php, tpl) must be fully declared here.</p>
 </div>
 <div class="section" id="theme-xml">
 <h2>theme.xml<a class="headerlink" href="#theme-xml" title="Permalink to this headline">¶</a></h2>
@@ -314,8 +310,6 @@ cấu trúc 1 extension gồm có:</p>
 &lt;/theme&gt;
 </pre></div>
 </div>
-<p>Phần nội dung này được hiển thị trên themes stores của chúng tôi, một khi theme được public lên server. Bạn khai báo tên, mô tả,
-version và hình xem trước. Xem tiếp <a class="reference external" href="theme-config.html">Thiết lập file cấu hình cho theme</a></p>
 </div>
 </div>
 

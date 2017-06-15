@@ -1,5 +1,5 @@
 ============
-Sử dụng Form
+Using Forms Manager
 ============
 
 Vinacart không giới hạn tạo form, bạn có thể tạo nhiều form theo ý muốn với mục đích sử dụng khác nhau. Tuy nhiên có một form mặc định dùng cho trang liên hệ (?rt=content/contact) tên là ``ContactUsFrm``.

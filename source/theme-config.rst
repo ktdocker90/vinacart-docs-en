@@ -1,12 +1,12 @@
 ==========================================
-Cấu hình theme
+Theme Configuration
 ==========================================
 
-File cấu hình của theme cho phép bạn thiết lập tùy biến về giao diện hiển thị ở các trang, cũng như khai báo các files assets (.js, .css) cần thiết sử dụng trong các pages.
-Ngoài ra bạn có thể tùy chỉnh thêm layout hiển thị riêng cho các page cụ thể và điều chỉnh vị trí của các blocks.
+The configuration file of the theme allows you to customize the look & feel shown on the every pages, as well as declare the necessary assets (.js, .css) files used in the pages.
+In addition, you can customize the display layout separately for specific pages and adjust the position of the blocks.
 
-Bạn sửa file này tại ``storefront/view/<theme>/config/theme.xml``
-Ví dụ:
+You can edit in ``storefront/view/<theme>/config/theme.xml``
+Example:
 
 ::
 
@@ -81,17 +81,17 @@ Configuration
 	        <item name="image_product_height_small" value="95"/>
 	    </configuration>
 
-Khai báo các thông tin cấu hình ở thẻ ``<configuration`` như version, sample_data, name.. Trong đó:
-- version: phiên bản hiện tại của vinacart
-- sample_data: tên dữ liệu mẫu bạn đang viết theme này. Danh sách dữ liệu mẫu gồm có: thoitrang, dulich,...(Bạn có thể bổ xung tùy ý, lưu ý không viết cách & chứa ký tự UTF-8).
-- name: tên thư mục theme.
+Declare the configuration information in the `` <configuration`` tag such as version, sample_data, name .. Explain:
+- version: Abantecart version
+- sample_data: sample data for the theme. List demo data: fashion, travel,...(But any string you want, Be careful not contain space character & include UTF-8 characters).
+- name: theme directory.
 
-Xem tiếp phần dưới có giải thích chi tiết cách dùng cấu hình.
+See below for a detailed explanation of how to use the configuration.
 
 Settings
 ========
 
-Phần này sẽ sửa lại toàn bộ thông số cài đặt của Vinacart được lưu vào database. Trên giao diện quản trị, để sửa các cài đặt này bạn truy cập tại ``?rt=setting/setting/all`` . Do mỗi theme giá trị cài đặt cấu hình có thể khác nhau tùy vào giao diện theme mà tùy chỉnh cho phù hợp, thay vì sửa trực tiếp trong admin bạn có thể sửa trực tiếp các giá trị đó ở file theme.xml này.
+This section will update all Abantecart settings that are saved in the databases. On the administration interface, to edit these settings you visit at ``?rt=setting/setting/all`` . Since each theme's configuration value may vary depending on the theme that is customized accordingly, instead of directly editing in the admin you can edit those values directly in the theme.xml file.
 
 ::
 
@@ -104,7 +104,7 @@ Phần này sẽ sửa lại toàn bộ thông số cài đặt của Vinacart �
 	    </settings>
 	</theme>
 
-Trường hợp lấy giá trị khai báo ở ``<configuration``.
+You can declare variable inside ``<configuration`` tag.
 
 ::
 
@@ -119,12 +119,12 @@ Trường hợp lấy giá trị khai báo ở ``<configuration``.
 	    </settings>
 	</theme>
 
-Với cách trên sẽ hữu ích khi export/import theme.
+The above method would be useful when exporting / importing a theme.
 
 Assets
 ======
 
-Khai báo chèn các files .js và .css sử dụng trong theme của bạn vào đây trong cặp thẻ ``<assets``.
+Register asset files include .js and .css used in your theme in assets tag ``<assets``.
 
 ::
 
@@ -134,28 +134,27 @@ Khai báo chèn các files .js và .css sử dụng trong theme của bạn vào
 		<file type="js" bottom="1"><![CDATA[/javascript/bootstrap.min.js]]></file>
 	</assets>
 
-thuộc tính type chỉ định kiểu file, vd ``type="css"`` dành cho file .css, nếu file bạn muốn load ở cuối trang thì thêm ``bottom="1"`` vào thẻ ``<file`` giống như trên không thì mặc định chúng hiển thị ở trong thẻ ``<head`` (chỉ dành cho file js). 
+type attribute tell your type of asset, e.g ``type="css"`` for .css, If the file you want to load at the bottom of the page you add ``bottom="1"`` to ``<file`` tag Otherwise, they are displayed by default in the tag ``<head`` (`button` attribute only apply to js file). 
 
-Đối với file css, bạn có thể bổ xung thuộc tính ``media`` bằng cách khai báo thêm thuộc tính ``media``. vd: *media="all"*
+For css files, you can add attribute ``media``, By declaring the add attribute ``media``. ex: *media="all"*
 
-Để cho đơn giản và dễ quản lý tôi đưa toàn bộ các files assets của theme vào một thư mục ``assets`` nằm tại ``storefront/view/<theme_name>/``. Lưu ý: đường dẫn được bắt đầu trong thư mục theme.
+For simplicity and ease of orginazation, I put all of the theme's assets into a `` assets`` directory located at `` storefront/view/<theme_name>/``. Note: The path is started in the theme folder.
 
-Các files css và js hệ thống bạn không được xóa đặc biệt là *.js chúng sử lý hành động của vinacart. vd: ``/javascript``, ``/stylesheet``
-Bên cạnh đó chúng ta có thể chèn URL ngoài như thư viện jquery,...google font.
+You should not delete files locate in  ``/javascript``, ``/stylesheet``
+Besides, we can include external URLs such as jquery, ... google fonts.
 
-**Đường dẫn (Path)**
+**Asset (Path)**
 
-Các files chứa trong theme thì được bắt đầu trong thư mục ``storefront/view/<theme_name>/`` và URL bắt đầu bằng dấu ``/`` giống như sau:
+The files contained in the theme are started in the ``storefront/view/<theme_name>/`` directory, and the URL begins with a ``/ `` like the following:
 
 ::
 
 	<file type="css"><![CDATA[/assets/style.css]]></file>
 
-Những files hệ thống thì cũng giống như vậy nhưng ở tại thư mục theme hệ thống mặc định.
 
-**Load assset ở page chỉ định**
+**Load asset on specific page**
 
-Đôi khi bạn chỉ muốn load các file .css, js ở các page nào đó để tránh load nhiều files không cần thiết với mục đích tăng tốc độ hiển thị website. Chẳng hạn thư viện phóng ảnh chỉ dùng trong trang sản phẩm chi tiết, để thực hiện bạn khai báo thêm thẻ `<assets` như sau.
+Sometimes you just want to load .css, js files at certain pages to avoid loading unnecessary files for the purpose of speeding up website display. For example, the image gallery is only used in the detailed product page, so you declare more the `<assets` tag as follows.
 
 ::
 
@@ -169,14 +168,14 @@ Những files hệ thống thì cũng giống như vậy nhưng ở tại thư m
 		<file type="js" bottom="1"><![CDATA[/assets/custom-slider/home.js]]></file>
 	</assets>
 
-Thuộc tính ``page`` chứa thông tin địa chỉ page (địa chỉ controller). Ví dụ: ``storefront/controller/blocks/banner_block.php`` thì địa chỉ page sẽ là ``blocks/banner_block`` . Địa chỉ là tham số ``rt`` khi bạn view site, có thể tìm thấy bằng cách view 1 trang sản phẩm.
+The ``page`` attribute contains the page address (controller address). e.g: ``storefront/controller/blocks/banner_block.php`` The page address will be ``blocks/banner_block`` . The address is the ``rt`` parameter when you view the site, which can be found by viewing a product page.
 
 .. image:: images/vnc-url-rt.png
 
-Chú ý: Mặc định site không bật chế độ SEO Url, để bạn thuận tiện cho việc debug.
-Bạn có thể khai báo nhiều thẻ ``assets`` nếu muốn, các thẻ không có thuộc tính ``page`` sẽ load ở mọi trang.
+Note: by default does not enable SEO Url mode, so you can debug.
+You can declare more ``assets`` tag if you wish, assets tag without the ``page`` attribute will load on every page.
 
-Bạn cũng có thể chỉ định ``page`` bằng tên địa chỉ seo url (alias). VD: Ta có trang about:  http://your-domain/about_us
+You can also specify ``page`` with the seo url name (alias). Ex: We have a about page: http://your-domain/about_us
 
 ::
 
@@ -185,9 +184,9 @@ Bạn cũng có thể chỉ định ``page`` bằng tên địa chỉ seo url (a
 		<file type="js" bottom="1"><![CDATA[/assets/js/file1.js]]></file> --><!-- `buttom` attribute only for js file -->
 	</assets>
 
-**Load assets tùy vào ngữ cảnh**
+**Load assets depend on the context**
 
-Đối với các file js/css/lib bạn muốn sử dụng cho một số block được gọi, vd quickview.css chỉ được chèn vào page khi hiển thị liệt kê sản phẩm. Trường hợp này không chỉ định vào page nào, mà có thể áp dụng cho nhiều trang. Xem ví dụ dưới:
+For js/css/lib files you want to use for some blocks used, eg quickview.css is only inserted into the page when displaying the product listing. This case does not specify a page, which can be applied to multiple pages. See the example below:
 
 ::
 
@@ -196,14 +195,14 @@ Bạn cũng có thể chỉ định ``page`` bằng tên địa chỉ seo url (a
         <file type="lib" ><![CDATA[zoom/cloud-zoom]]></file>
     </assets>
 
-Ở ví dụ trên chúng ta sử dụng thuộc tính ``context`` thay cho thuộc tính ``page``. Chú ý: không sử dụng đồng thời 2 thuộc tính đó.
+In the above example we use the ``context`` attribute instead of the ``page`` attribute. Note: do not use both properties at the same time.
 
 Thư viện
 ^^^^^^^^
 
-Vinacart tích hợp sẵn các thư viện javascript/jquery phổ biến. Với mục đích sử dụng tiện lợi, lý do một số thư viện bao gồm nhiều file css & js, bạn sẽ khó quản lý khi chèn từng file đôi khi một số thư viện sử dụng chung file rất dễ bị nhân bản nếu không sử dụng cẩn thận. Do vậy cách dễ dàng nhất là sử dụng thư viện mặc định của vinacart (Chú ý: bạn cũng có thể khai báo thêm thư viện, nếu muốn).
+Vinacart built-in popular javascript/jquery libraries. For the sake of convenience, some libraries include multiple css & js files, which are difficult to manage when inserting files, and some libraries if you insert manually so they can using the same files that are duplicated. So the easiest way is to use the default library of vinacart (Note: you can also declare more libraries, if you want in your theme).
 
-Ví dụ: gọi thư viện bootstrap.
+Example: for bootstrap library.
 ::
 
 	<file type="lib">
@@ -211,16 +210,16 @@ Ví dụ: gọi thư viện bootstrap.
     </file>
 
 
-Mặc định sẽ load các files: bootstrap.min.css, bootstrap.min.js
+By default it loads the files: bootstrap.min.css, bootstrap.min.js
 
-Xem đầy đủ thư viện tại http://tailieu.vinacart.net/?p=js_lib&tp=file&view=code
+all js libraries declare in core/load-js-libs.php.
 
-Bạn cũng có viết ngắn gọn như sau:
+You also write briefly as follows:
 ::
 	
 	<file type="lib"><![CDATA[ui/bootstrap]]></file>
 
-Tuy nhiên, trường hợp nếu trong thư viện có thêm một số file (vd: file bổ xung cho thư viện đó) không được mặc định load. VD: nivoSlider có nhiều skins khác nhau. Chúng ta khai báo đầy đủ theo cú pháp trên và thêm tên file bạn muốn nạp, mỗi file cách nhau dấu ``|``:
+However, the case if the library has added some files (eg additional files for that library) is not loaded by default. Eg: nivoSlider has many different skins. We fully declare the above syntax and add the file name you want to load, each separated by ``|``:
 ::
 
 	<file type="lib">
@@ -228,7 +227,7 @@ Tuy nhiên, trường hợp nếu trong thư viện có thêm một số file (v
         <param name="styles"><![CDATA[light.css]]></param>
     </file>
 
-Ví dụ: nạp các plugin của jquery:
+For example: loading jQuery plugins:
 ::
 
 	<file type="lib">
@@ -237,7 +236,7 @@ Ví dụ: nạp các plugin của jquery:
     </file>
 
 
-Để bổ xung thêm thư viện, bạn viết vào file ``core/config/library.php``
+To add a library, you write to the file ``core/config/library.php``
 ::
 
 	<?php
@@ -288,7 +287,7 @@ Ví dụ: nạp các plugin của jquery:
 Templates
 =========
 
-Mặc định mọi trang sẽ gọi vào ``common/page.tpl`` như vậy bạn sẽ viết template chung cho toàn bộ pages vào file này, tuy nhiên nếu bạn muốn linh hoạt hơn bằng cách viết template cho các page khác nhau vào các file khác nhau, chúng ta sẽ khai báo thêm templates vào thẻ ``<templates``.
+By default all pages will load in ``common/page.tpl`` so you will design all page in this file, but if you want to be more flexible by writing templates for different pages into Different files, we will declare more templates to the `` <templates`` tag.
 
 ::
 
@@ -306,32 +305,32 @@ Mặc định mọi trang sẽ gọi vào ``common/page.tpl`` như vậy bạn s
 
 	</templates>
 
-Mỗi page có template riêng biệt được khai báo vào thẻ ``<page``, địa chỉ page bởi thuộc tính ``context`` và địa chỉ .tpl xuất phát trong thư mục ``template`` của theme, khai báo vào thuộc tính ``template``.
+Each page has a separate template declared in the ``<page`` tag, the page address by the ``context`` attribute, and the .tpl address in the ``template`` directory of the theme, declared with ``template`` attribute.
 
-Trường hợp địa chỉ page (controller) có nhiều trang con, vd: contact page : ``content/contact`` khi gửi thành công sẽ chuyển sang trang ``content/contact/success``. Trang này chưa được khai báo ở trên do vậy mặc định sử dụng template page.tpl để hiển thị. Chúng ta sẽ gọi chung vào file .tpl của trang liên hệ đã khai báo ở trên như sau:
+In the case the page address (controller) has many child pages, eg: contact page: ``content/contact`` when sent successfully will go to the ``content/contact/success`` page. This page has not been declared above so use the default template page.tpl to display it. We will use sample file for  ``content/contact`` like this:
 
 ::
 	
 	<page context="content/contact/success" template="common/page-contact.tpl"></page>
 
-Cách khác, bạn cũng có thể thiết lập sử dụng chung template với trang chính  (content/contact) bằng cách thêm thuộc tính ``child_pages="1"``:
+Alternatively, you can also set up using the same template with the content/contact page by adding ``child_pages="1"``:
 
 ::
 	
 	<page context="content/contact" child_pages="1" template="common/page-contact.tpl"></page>
 
-Cách này sẽ áp dụng template page-contact.tpl cho mọi trang con từ địa chỉ 'content/contact'.
+This will apply the page-contact.tpl template to every child page from the 'content/contact' address.
 
-**Lọc page bởi tham số**
+**Filter page by parameter**
 
-Bạn cũng có thể sử dụng nhiều templates cho 1 trang, bằng cách lọc tham số URL. Ở ví dụ trên, page ``content/content`` sẽ hiển thị nội dung trang có *id=1*, khai báo tham số ``content_id`` vào thuộc tính ``args``.
+You can also use multiple templates for a page, by filtering the URL parameters. In the above example, the page ``content/content`` will display the page content with *id=1*, declaring the ``content_id`` parameter on the ``args`` property.
 
 ::
 
 	<page context="content/content" args="content_id=1" template="common/page-aboutus.tpl"></page>
 
-Nếu nhiều hơn một tham số, các tham số cách nhau bởi dấu ``&`` vd: `arg1=value1&arg2=value2`
-Viết thêm mỗi template (.tpl) mới, bạn cần khai báo vào ``<custom_templates``.
+If more than one parameter, the parameters separated by ``&`` Ex: `arg1=value1&arg2=value2`
+Write each new template (.tpl), you need to declare it in ``<custom_templates``.
 
 ::
 
@@ -346,7 +345,7 @@ Viết thêm mỗi template (.tpl) mới, bạn cần khai báo vào ``<custom_t
 Layout
 ======
 
-Vinacart có một số templates layout mặc định sau:
+Abantecart has some of the default layout templates:
 
 - Default Page Layout
 - Home Page
@@ -358,11 +357,11 @@ Vinacart có một số templates layout mặc định sau:
 - Cart Page
 - Product Listing Page.
 
-Ngoài ra, vinacart cho phép bạn thêm layout cho nội dung category, product bạn muốn tùy chỉnh layout. 
-Tuy nhiên việc tùy biến mọi layout sẽ không được phép trong giao diện admin.
+In addition, vinacart allows you to add a layout to the specific category/product/content page, if you want to customize the layout.
+However, customizing all layouts will not be allowed in the admin interface.
 
-Ví dụ trang liên hệ bạn muốn chèn thêm block bản đồ sẽ không được, bạn không thể thao tác trong admin và cần khai báo thêm layout cho page bạn muốn thay đổi dữ liệu (blocks).
-Viết vào file cấu hình theme (theme.xml) nội dung sau:
+For example, the contact page you want to add the map block will not be, you can not manipulate the admin ui and need to declare more layout for the page to change the blocks data.
+Write to the theme configuration file (theme.xml) with the following content:
 
 ::
 
@@ -375,26 +374,25 @@ Viết vào file cấu hình theme (theme.xml) nội dung sau:
 		</page>
 	</layout>
 
-Tham số:
+Arguments:
 
-- ``name`` - Tên hiển thị layout.
-- ``context`` - địa chỉ page.
-.. ``param`` - tên tùy ý không dấu cách và không được trùng với các layout khác.
+- ``name`` - layout name.
+- ``context`` - page address.
 
-Các tham số khác để mặc định.
-Nếu bạn muốn áp dụng một layout cho các page khác, khai báo thẻ con ``<apply`` giống như trên.
+Other parameters leave default.
+If you want to apply a layout to other pages, declare the ``<apply`` like the above.
 
 Blocks
 ======
 
-Có 2 loại block:
+There are two types of blocks:
 
-- parent block: gồm ``header``, ``header_bottom``, ``column_left``, ``column_right``, ``content_top``, ``content_bottom``
-- child block: là các blocks con chứa trong parent block. vd: latest, bestsellers, account,..
+- parent block: includes ``header``, ``header_bottom``, ``column_left``, ``column_right``, ``content_top``, ``content_bottom``
+- child block: These are the child blocks contained in the parent block. Ex: latest, bestsellers, account,..
 
-Vinacart quy định các child blocks giới hạn hiển thị trong parent blocks. VD, block *bestsellers* mặc định chỉ hiển thị ở ``column_left``, ``column_right``, ``content_bottom``.
+Abantecart restricts child blocks to display in parent blocks. Ex, block *bestsellers* by default only nest in ``column_left``, ``column_right``, ``content_bottom``.
 
-Tuy nhiên bạn có thể mở rộng hiển thị các blocks ở vị trí parent blocks khác để thuận lợi trong việc phát triển theme. Để làm điều này bạn khai báo vào thẻ ``<blocks``. Xem ví dụ dưới đây:
+However, you can expand the display of blocks at other parent block to facilitate the development of the theme. To do this, you declare the ``<blocks`` tag. See the example below:
 
 ::
 
@@ -440,27 +438,27 @@ Tuy nhiên bạn có thể mở rộng hiển thị các blocks ở vị trí pa
 		</block>
 	</blocks>
 
-*Giải thích*:
+*Explain*:
 
-- ``block_txt_id`` - txt id của block.
-- ``controller`` -  controller hiển thị nội dung block.
-- ``templates`` - Khai báo parent block và template mặc định của block hiển thị ở vị trí đó, trong mỗi cặp thẻ ``<__AUTO_INCREASE__``.
-- ``custom_templates`` - khai báo các template đã thêm ngoài template mặc định của block vào đây.
+- ``block_txt_id`` - block txt id.
+- ``controller`` -  controller of block.
+- ``templates`` - Declare the parent block and the default template of the block displayed at that parent block, in each pair of tags ``<__AUTO_INCREASE__``.
+- ``custom_templates`` - Declare your own templates in addition to the default block template here (not required).
 
-Để block này có hiệu lực, bạn sẽ nạp lại cấu hình bằng cách truy cập **Design > My Settings > Install & Configure** nhấn vào tab **Refresh Extensions** và click **Refresh Blocks**
+In order for this block to take effect, you will reload the configuration by visiting **System > VNC Framework > Tools** and click **Refresh Blocks**
 
-Ok, quay trở lại trang layout trong admin, chọn layout trong danh sách bạn sẽ thấy bổ xung các layout mới.
+Ok, go back to the layout page in admin, select the layout in the list you will see the new layout.
 
 .. image:: images/vnc-layouts.jpg
 
 
-Cấu hình block
+Block Settings
 ^^^^^^^^^^^^^^
 
-Tất cả các blocks sẽ sử dụng chung cấu hình của vinacart mà bạn đã thiết lập (tại Admin URL: /index.php?rt=setting/setting/all).
-Đôi khi một vài block sẽ cần thay đổi lại giá trị, chẳng hạn như block bestseller, latest nằm ở cột trái (column_left) kích thước ảnh theo thiết kế theme là nhỏ hơn so với hiển thị products ở trang chủ, trang danh mục sản phẩm. 
+All the blocks will use the same vinacart configuration you set up (at Admin URL: /index.php?rt=setting/setting/all).
+Sometimes some blocks will need to change the value, such as the bestseller block, latest in the left column (column_left), suppose that image size according to the theme design is smaller than the product display in the home page, Products.
 
-Kích thước ảnh này quy định bởi cấu hình *config_image_product_width*, *config_image_product_height*. Bạn có thể dễ dàng thay đổi thông số này áp dụng cho parent block & child block, giống như sau:
+This image size is determined by the configuration *config_image_product_width*, *config_image_product_height*. You can easily change this parameter to apply to parent block & child block, like this:
 ::
 
 	<blocks>
@@ -487,7 +485,7 @@ Kích thước ảnh này quy định bởi cấu hình *config_image_product_wi
 
 	</blocks>
 
-Lưu ý: với mỗi kích thước tạo ra sẽ tạo thêm ảnh mới tương ứng với kích thước đó, cho nên hãy cẩn trọng để tránh gây thừa dung lượng. Nếu bạn sử dụng nhiều lần giá trị cấu hình cách tốt nhất thiết vào biến để tránh viết nhầm giá trị.
+Note: With each size created will create new images corresponding to that size, so be careful to avoid redundancy. If you use multiple times values configure the best way to set variables to avoid writing the wrong value.
 ::
 
 	<configuration>
@@ -502,7 +500,7 @@ Lưu ý: với mỗi kích thước tạo ra sẽ tạo thêm ảnh mới tươn
 	    </config>
 	</block>
 
-Bạn cũng có thể thay đổi giá trị cài đặt ở từng vị trí parent, bằng cách khai báo giá trị trong thẻ ``<skin>``.
+You can also change the setting value in each parent position, by declaring the value in the ``<skin>`` tag.
 
 ::
 	<skin>
@@ -524,14 +522,14 @@ Bạn cũng có thể thay đổi giá trị cài đặt ở từng vị trí pa
         </_AI_>
     </skin>
 
-Xem thêm block skin ở phần dưới.
+See more block skin below.
 
 Block Skin
 ^^^^^^^^^^
 
-Kế thừa hầu hết các cms hiện nay như wordpress, bạn có thể khai báo giao diện sidebar dễ dàng với vinacart. Thiết lập trong file cấu hình (``theme.xml``)
+Inherit almost all current cms like wordpress, you can declare the sidebar params easily with vinacart. Set up in the configuration file (``theme.xml``)
 
-Khai báo các skin sử dụng cho theme:
+Declare the skins used for the theme:
 ::
 
 	<block_skins>
@@ -562,7 +560,7 @@ Khai báo các skin sử dụng cho theme:
         </skin>
     </block_skins>
 
-Áp dụng skin vào parent block.
+Apply skin to parent block.
 
 ::
 
@@ -607,9 +605,9 @@ Khai báo các skin sử dụng cho theme:
 		..
 	</blocks>
 
-Chú ý: giá trị biến ``before_title``, ``after_title`` ở thẻ ``<param`` tương ứng với biến ``%2$s``.
+Note: values of variable ``before_title``, ``after_title`` with ``<param`` tag Corresponds to the placeholder ``%2$s``.
 
-Trong file .tpl để hiển thị skin chúng ta có các biến:
+In the .tpl file to display the skin we have template variables:
 ::
 
 	{{before_widget}}
@@ -618,7 +616,7 @@ Trong file .tpl để hiển thị skin chúng ta có các biến:
 		..
 	{{after_widget}}
 
-Khi đặt block ở 2 vị trí khác nhau mà chúng đều hiển thị vào một file, vd: bestseller block ở column_left & column_right đều gọi vào bestseller.tpl. Trường hợp này bạn cũng có thể sử dụng 2 template khác nhau cho một block ở các vị trí parent khác nhau và khai báo sử dụng nhiều skin. Chúng ta sẽ thay đổi skin với nhiều vị trí, như sau:
+When placing blocks in two different positions they all show up in a file, eg: bestseller block in column_left & column_right both calls in bestseller.tpl. In this case you can also use two different templates for a block at different parent and declare multiple skins. We will change skin with multiple parent block, as follows:
 
 ::
 
@@ -643,7 +641,7 @@ Khi đặt block ở 2 vị trí khác nhau mà chúng đều hiển thị vào 
 		</_AI_>
 	</skin>
 
-Chú ý: ``<_AI_>`` alias của ``<__AUTO_INCREASE__>``
+Note: ``<_AI_>`` stand for ``<__AUTO_INCREASE__>``
 
 Image Configuration
 ===================

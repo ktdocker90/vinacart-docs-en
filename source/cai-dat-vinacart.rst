@@ -8,7 +8,7 @@ Server Configuration
 --------------------
 **Apache**: Required modules & extension as bellow:
 
-PHP version 5.6+
+Require PHP minimum version is 5.6+
 
 - *Module*: mod_rewrite
 - *Extension*: 
