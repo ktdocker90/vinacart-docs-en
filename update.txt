@@ -1,4 +1,5 @@
 cd "F:\HoangData\htdocs\sphinx-doc\vinacart_help"
+make html
 git remote add origin https://github.com/ktdocker90/vinacart-docs-en.git
 
 git add .

@@ -5,7 +5,6 @@
 
 Vinacart development theme
 ==========================
-Theme guide: `codex.vinacart.net <http://codex.vinacart.net>`_
 
 This is a guide to VinaCart Ecommerce theme design for users and developers. This document covers many aspects related to setting up your store, as well as user interface development guidelines.
 
