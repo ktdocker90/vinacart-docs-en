@@ -34,7 +34,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Vinacart Docs 1.0 documentation" href="index.html"/>
-        <link rel="next" title="General" href="global-config.html"/>
+        <link rel="next" title="Using layout blocks" href="intro-layout-blocks.html"/>
         <link rel="prev" title="Getting start" href="getting-start.html"/> 
 
   
@@ -103,10 +103,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#block-skin">Block Skin</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#image-configuration">Image Configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="global-config.html">General</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Using layout blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
 </ul>
@@ -229,7 +227,7 @@ Example:</p>
     &lt;/configuration&gt;
 </pre></div>
 </div>
-<p>Declare the configuration information in the `` &lt;configuration`` tag such as version, sample_data, name .. Explain:
+<p>Declare the configuration information in the <code class="docutils literal"><span class="pre">&lt;configuration</span></code> tag such as version, sample_data, name .. Explain:
 - version: Abantecart version
 - sample_data: sample data for the theme. List demo data: fashion, travel,...(But any string you want, Be careful not contain space character &amp; include UTF-8 characters).
 - name: theme directory.</p>
@@ -274,17 +272,17 @@ Example:</p>
 </pre></div>
 </div>
 <p>type attribute tell your type of asset, e.g <code class="docutils literal"><span class="pre">type=&quot;css&quot;</span></code> for .css, If the file you want to load at the bottom of the page you add <code class="docutils literal"><span class="pre">bottom=&quot;1&quot;</span></code> to <code class="docutils literal"><span class="pre">&lt;file</span></code> tag Otherwise, they are displayed by default in the tag <code class="docutils literal"><span class="pre">&lt;head</span></code> (<cite>button</cite> attribute only apply to js file).</p>
-<p>For css files, you can add attribute <code class="docutils literal"><span class="pre">media</span></code>, By declaring the add attribute <code class="docutils literal"><span class="pre">media</span></code>. ex: <em>media=&#8221;all&#8221;</em></p>
-<p>For simplicity and ease of orginazation, I put all of the theme&#8217;s assets into a `` assets`` directory located at `` storefront/view/&lt;theme_name&gt;/<a href="#id1"><span class="problematic" id="id2">``</span></a>. Note: The path is started in the theme folder.</p>
+<p>For css files, you can add attribute <code class="docutils literal"><span class="pre">media</span></code>, By declaring the add attribute <code class="docutils literal"><span class="pre">media</span></code>. ex: <strong>media=&#8221;all&#8221;</strong></p>
+<p>For simplicity and ease of orginazation, I put all of the theme&#8217;s assets into a <code class="docutils literal"><span class="pre">assets</span></code> directory located at <code class="docutils literal"><span class="pre">storefront/view/&lt;theme_name&gt;/</span></code>. Note: The path is started in the theme folder.</p>
 <p>You should not delete files locate in  <code class="docutils literal"><span class="pre">/javascript</span></code>, <code class="docutils literal"><span class="pre">/stylesheet</span></code>
 Besides, we can include external URLs such as jquery, ... google fonts.</p>
 <p><strong>Asset (Path)</strong></p>
-<p>The files contained in the theme are started in the <code class="docutils literal"><span class="pre">storefront/view/&lt;theme_name&gt;/</span></code> directory, and the URL begins with a <a href="#id3"><span class="problematic" id="id4">``</span></a>/ `` like the following:</p>
+<p>The files contained in the theme are started in the <code class="docutils literal"><span class="pre">storefront/view/&lt;theme_name&gt;/</span></code> directory, and the URL begins with a <code class="docutils literal"><span class="pre">/</span></code> like the following:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>&lt;file type=&quot;css&quot;&gt;&lt;![CDATA[/assets/style.css]]&gt;&lt;/file&gt;
 </pre></div>
 </div>
 <p><strong>Load asset on specific page</strong></p>
-<p>Sometimes you just want to load .css, js files at certain pages to avoid loading unnecessary files for the purpose of speeding up website display. For example, the image gallery is only used in the detailed product page, so you declare more the <cite>&lt;assets</cite> tag as follows.</p>
+<p>Sometimes you just want to load .css, js files at certain pages to avoid loading unnecessary files for the purpose of speeding up website display. For example, the image gallery is only used in the detailed product page, so you declare more the <code class="docutils literal"><span class="pre">&lt;assets</span></code> tag as follows.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>&lt;assets page=&quot;product/product&quot;&gt;
         &lt;file type=&quot;css&quot; bottom=&quot;0&quot;&gt;&lt;![CDATA[/assets/custom-slider/css/nivo-slider.css]]&gt;&lt;/file&gt;
         &lt;file type=&quot;css&quot; bottom=&quot;0&quot;&gt;&lt;![CDATA[/assets/custom-slider/css/preview.css]]&gt;&lt;/file&gt;
@@ -395,7 +393,7 @@ return array(
 </div>
 <div class="section" id="templates">
 <h2>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h2>
-<p>By default all pages will load in <code class="docutils literal"><span class="pre">common/page.tpl</span></code> so you will design all page in this file, but if you want to be more flexible by writing templates for different pages into Different files, we will declare more templates to the `` &lt;templates`` tag.</p>
+<p>By default all pages will load in <code class="docutils literal"><span class="pre">common/page.tpl</span></code> so you will design all page in this file, but if you want to be more flexible by writing templates for different pages into Different files, we will declare more templates to the <code class="docutils literal"><span class="pre">&lt;templates</span></code> tag.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>&lt;templates&gt;
         &lt;!-- alway use short path --&gt;
         &lt;page context=&quot;index/home&quot; template=&quot;common/page-home.tpl&quot;&gt;&lt;/page&gt;
@@ -581,36 +579,26 @@ Sometimes some blocks will need to change the value, such as the bestseller bloc
 </pre></div>
 </div>
 <p>You can also change the setting value in each parent position, by declaring the value in the <code class="docutils literal"><span class="pre">&lt;skin&gt;</span></code> tag.</p>
-<dl class="docutils">
-<dt>::</dt>
-<dd><blockquote class="first">
-<div><p>&lt;skin&gt;
-&lt;_AI_&gt;</p>
-<blockquote>
-<div><p>&lt;name&gt;&lt;![CDATA[sb_flat]]&gt;&lt;/name&gt;
-&lt;position&gt;&lt;![CDATA[content_bottom]]&gt;&lt;/position&gt;
-&lt;config&gt;</p>
-<blockquote>
-<div>&lt;param name=&#8221;blog_entry_image_width&#8221;&gt;&lt;![CDATA[blog_entry_image_width]]&gt;&lt;/param&gt;
-&lt;param name=&#8221;blog_entry_image_height&#8221;&gt;&lt;![CDATA[blog_entry_image_height]]&gt;&lt;/param&gt;</div></blockquote>
-<p>&lt;/config&gt;</p>
-</div></blockquote>
-<p>&lt;/_AI_&gt;
-&lt;_AI_&gt;</p>
-<blockquote>
-<div><p>&lt;name&gt;&lt;![CDATA[sb]]&gt;&lt;/name&gt;
-&lt;position&gt;&lt;![CDATA[column_left]]&gt;&lt;/position&gt;
-&lt;config&gt;</p>
-<blockquote>
-<div>&lt;param name=&#8221;blog_entry_image_width&#8221;&gt;&lt;![CDATA[blog_entry_small_image_width]]&gt;&lt;/param&gt;
-&lt;param name=&#8221;blog_entry_image_height&#8221;&gt;&lt;![CDATA[blog_entry_small_image_height]]&gt;&lt;/param&gt;</div></blockquote>
-<p>&lt;/config&gt;</p>
-</div></blockquote>
-<p>&lt;/_AI_&gt;</p>
-</div></blockquote>
-<p class="last">&lt;/skin&gt;</p>
-</dd>
-</dl>
+<div class="highlight-default"><div class="highlight"><pre><span></span>    &lt;skin&gt;
+    &lt;_AI_&gt;
+        &lt;name&gt;&lt;![CDATA[sb_flat]]&gt;&lt;/name&gt;
+        &lt;position&gt;&lt;![CDATA[content_bottom]]&gt;&lt;/position&gt;
+        &lt;config&gt;
+            &lt;param name=&quot;blog_entry_image_width&quot;&gt;&lt;![CDATA[blog_entry_image_width]]&gt;&lt;/param&gt;
+            &lt;param name=&quot;blog_entry_image_height&quot;&gt;&lt;![CDATA[blog_entry_image_height]]&gt;&lt;/param&gt;
+        &lt;/config&gt;
+    &lt;/_AI_&gt;
+    &lt;_AI_&gt;
+        &lt;name&gt;&lt;![CDATA[sb]]&gt;&lt;/name&gt;
+        &lt;position&gt;&lt;![CDATA[column_left]]&gt;&lt;/position&gt;
+        &lt;config&gt;
+            &lt;param name=&quot;blog_entry_image_width&quot;&gt;&lt;![CDATA[blog_entry_small_image_width]]&gt;&lt;/param&gt;
+            &lt;param name=&quot;blog_entry_image_height&quot;&gt;&lt;![CDATA[blog_entry_small_image_height]]&gt;&lt;/param&gt;
+        &lt;/config&gt;
+    &lt;/_AI_&gt;
+&lt;/skin&gt;
+</pre></div>
+</div>
 <p>See more block skin below.</p>
 </div>
 <div class="section" id="block-skin">
@@ -724,88 +712,6 @@ Sometimes some blocks will need to change the value, such as the bestseller bloc
 <p>Note: <code class="docutils literal"><span class="pre">&lt;_AI_&gt;</span></code> stand for <code class="docutils literal"><span class="pre">&lt;__AUTO_INCREASE__&gt;</span></code></p>
 </div>
 </div>
-<div class="section" id="image-configuration">
-<h2>Image Configuration<a class="headerlink" href="#image-configuration" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p class="first">config_image_thumb_width|     config_image_thumb_height</p>
-<blockquote>
-<div><ul class="simple">
-<li>thumb image for product page.</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="first">config_image_popup_width|     config_image_popup_height</p>
-<blockquote>
-<div><ul class="simple">
-<li>(listing_block) main image with media resource type for current object in page.</li>
-<li>main image for product page.</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="first">config_image_product_width|config_image_product_height</p>
-<blockquote>
-<div><ul class="simple">
-<li>thumb image used in block: bestseller, featured, latest, special, listing_block (for product).</li>
-<li>thumb for products listing in category|manufacturer|search|special page</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="first">config_image_additional_width|config_image_additional_height</p>
-<blockquote>
-<div><ul class="simple">
-<li>thumb image in block cart</li>
-<li>additional thumb images in product page.</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="first">config_image_related_width|config_image_related_height</p>
-<blockquote>
-<div><ul class="simple">
-<li>main image for related products in product page.</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="first">config_image_cart_width|config_image_cart_height</p>
-<blockquote>
-<div><ul class="simple">
-<li>list product in account page: cart, download, invoice, wishlist, confirm, guest_step_3</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="first">config_image_grid_width|config_image_grid_height</p>
-<blockquote>
-<div><ul class="simple">
-<li>block manufacturer</li>
-<li>image in manufacturer page.</li>
-<li>list manufacturer images in product page.</li>
-<li>(admin) in all grid list with image support.</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="first">config_image_category_width|config_image_category_height</p>
-<blockquote>
-<div><ul class="simple">
-<li>block category, listing_block (for category)</li>
-<li>list subcategories in category page.</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="first">config_image_manufacturer_width|config_image_manufacturer_height</p>
-<blockquote>
-<div><ul class="simple">
-<li>listing_block (for manufacturer)</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-<p><em>Conclusion</em>:</p>
-<p>blocks: cart, category, bestseller (featured, latest, special), listing_block, manufacturer
-pages:</p>
-<blockquote>
-<div>single product
-products listing page (category|manufacturer..)
-account pages (cart, download, invoice, wishlist, confirm, guest_step_3)</div></blockquote>
-</div>
 </div>
 
 
@@ -815,7 +721,7 @@ account pages (cart, download, invoice, wishlist, confirm, guest_step_3)</div></
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="global-config.html" class="btn btn-neutral float-right" title="General" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="intro-layout-blocks.html" class="btn btn-neutral float-right" title="Using layout blocks" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="getting-start.html" class="btn btn-neutral" title="Getting start" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

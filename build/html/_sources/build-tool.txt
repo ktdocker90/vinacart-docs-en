@@ -27,9 +27,9 @@ To delete all the theme data click the Delete button.
 
 theme.xml
 =========
-This is the configuration file for the theme. This file define assets (.css, .js) , block configuration and other configurations such as images, which will be automatically updated by clicking on the `` Update theme.xml`` button.
+This is the configuration file for the theme. This file define assets (.css, .js) , block configuration and other configurations such as images, which will be automatically updated by clicking on the ``Update theme.xml`` button.
 
-Once this file is created, the modules that are used for creating `` theme.xml`` will be marked as built, which will metion bellow in the Themes list.
+Once this file is created, the modules that are used for creating ``theme.xml`` will be marked as built, which will metion bellow in the Themes list.
 
 Global/Menu
 ===========
@@ -52,7 +52,7 @@ Blocks module
 ^^^^^^^^^^^^^^^^^
 This section sets up a module HTML for blocks, for which blocks that use modules (mean, blocks that do not have their own HTML  but for sharing HTML components in page/block, called modules).
 
-A module can create multiple html template for single module with different HTML structure for that module. It's name with the same file as the module name and other files with the `` -n`` suffix.
+A module can create multiple html template for single module with different HTML structure for that module. It's name with the same file as the module name and other files with the ``-n`` suffix.
 Eg:
 The tabs module has: tabs.html (main interface), tabs-1.html, tabs-2.html, ..
 
@@ -83,7 +83,7 @@ Click Reset to mark all blocks that mean they need to be rebuilt.
 
 Template
 ========
-This panel lists the .tpl files that have been automatically generated. Click the file or right mouse button & select `` edit`` to edit the content. To delete, click the `` Delete`` on context menu.
+This panel lists the .tpl files that have been automatically generated. Click the file or right mouse button & select ``edit`` to edit the content. To delete, click the ``Delete`` on context menu.
 
 
 Inspect HTML

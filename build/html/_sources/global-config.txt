@@ -6,7 +6,8 @@ Credential
 ==========
 
 Use external services, like sending mail.
-These credentials are listed in the `` system / config / credentials.php`` file
+These credentials are listed in the ``system/config/credentials.php`` file
+
 ::
 
 	<?php

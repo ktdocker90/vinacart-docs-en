@@ -33,8 +33,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Vinacart Docs 1.0 documentation" href="index.html"/>
-        <link rel="prev" title="Template" href="template.html"/> 
+    <link rel="top" title="Vinacart Docs 1.0 documentation" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -83,34 +82,14 @@
           
             
             
-                <ul class="current">
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="user_manual/vinacart.html">Vinacart (VNC Theme Framework)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cai-dat-vinacart.html">Vinacart Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Cấu trúc theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Theme Development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-start.html">Getting start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="theme-config.html">Cấu hình theme</a></li>
-<li class="toctree-l1"><a class="reference internal" href="global-config.html">General</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theme-config.html">Theme Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Using layout blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Build theme automation tool</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#convention-glossary">Convention/Glossary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#build-form">Build Form</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#theme-xml">theme.xml</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#global-menu">Global/Menu</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#css-class-id">CSS class/id</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#common-html-template">Common HTML Template</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#blocks-module">Blocks module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#blocks-setting">Blocks setting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#blocks-advanced">Blocks Advanced</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#themes-list">Themes List</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#template">Template</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#inspect-html">Inspect HTML</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#html-pages">HTML Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#export">Export</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#upload-html">Upload HTML</a></li>
-</ul>
-</li>
 </ul>
 
             
@@ -179,8 +158,8 @@
 </div>
 <div class="section" id="theme-xml">
 <h2>theme.xml<a class="headerlink" href="#theme-xml" title="Permalink to this headline">¶</a></h2>
-<p>This is the configuration file for the theme. This file define assets (.css, .js) , block configuration and other configurations such as images, which will be automatically updated by clicking on the `` Update theme.xml`` button.</p>
-<p>Once this file is created, the modules that are used for creating `` theme.xml`` will be marked as built, which will metion bellow in the Themes list.</p>
+<p>This is the configuration file for the theme. This file define assets (.css, .js) , block configuration and other configurations such as images, which will be automatically updated by clicking on the <code class="docutils literal"><span class="pre">Update</span> <span class="pre">theme.xml</span></code> button.</p>
+<p>Once this file is created, the modules that are used for creating <code class="docutils literal"><span class="pre">theme.xml</span></code> will be marked as built, which will metion bellow in the Themes list.</p>
 </div>
 <div class="section" id="global-menu">
 <h2>Global/Menu<a class="headerlink" href="#global-menu" title="Permalink to this headline">¶</a></h2>
@@ -200,7 +179,7 @@ Enter the HTML into the editor, and hit the Save button.</p>
 <div class="section" id="blocks-module">
 <h3>Blocks module<a class="headerlink" href="#blocks-module" title="Permalink to this headline">¶</a></h3>
 <p>This section sets up a module HTML for blocks, for which blocks that use modules (mean, blocks that do not have their own HTML  but for sharing HTML components in page/block, called modules).</p>
-<p>A module can create multiple html template for single module with different HTML structure for that module. It&#8217;s name with the same file as the module name and other files with the `` -n`` suffix.
+<p>A module can create multiple html template for single module with different HTML structure for that module. It&#8217;s name with the same file as the module name and other files with the <code class="docutils literal"><span class="pre">-n</span></code> suffix.
 Eg:
 The tabs module has: tabs.html (main interface), tabs-1.html, tabs-2.html, ..</p>
 <p>Example: If two blocks use the same module, they have different HTML content. On this page select the desired HTML file for the module to use for each block.</p>
@@ -228,7 +207,7 @@ Click Reset to mark all blocks that mean they need to be rebuilt.</p>
 </div>
 <div class="section" id="template">
 <h2>Template<a class="headerlink" href="#template" title="Permalink to this headline">¶</a></h2>
-<p>This panel lists the .tpl files that have been automatically generated. Click the file or right mouse button &amp; select `` edit`` to edit the content. To delete, click the `` Delete`` on context menu.</p>
+<p>This panel lists the .tpl files that have been automatically generated. Click the file or right mouse button &amp; select <code class="docutils literal"><span class="pre">edit</span></code> to edit the content. To delete, click the <code class="docutils literal"><span class="pre">Delete</span></code> on context menu.</p>
 </div>
 <div class="section" id="inspect-html">
 <h2>Inspect HTML<a class="headerlink" href="#inspect-html" title="Permalink to this headline">¶</a></h2>
@@ -265,13 +244,6 @@ Note: zip contains directly html files not located in the root directory.</p>
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="template.html" class="btn btn-neutral" title="Template" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

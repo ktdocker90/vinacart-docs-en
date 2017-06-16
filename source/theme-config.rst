@@ -81,7 +81,7 @@ Configuration
 	        <item name="image_product_height_small" value="95"/>
 	    </configuration>
 
-Declare the configuration information in the `` <configuration`` tag such as version, sample_data, name .. Explain:
+Declare the configuration information in the ``<configuration`` tag such as version, sample_data, name .. Explain:
 - version: Abantecart version
 - sample_data: sample data for the theme. List demo data: fashion, travel,...(But any string you want, Be careful not contain space character & include UTF-8 characters).
 - name: theme directory.
@@ -136,16 +136,16 @@ Register asset files include .js and .css used in your theme in assets tag ``<as
 
 type attribute tell your type of asset, e.g ``type="css"`` for .css, If the file you want to load at the bottom of the page you add ``bottom="1"`` to ``<file`` tag Otherwise, they are displayed by default in the tag ``<head`` (`button` attribute only apply to js file). 
 
-For css files, you can add attribute ``media``, By declaring the add attribute ``media``. ex: *media="all"*
+For css files, you can add attribute ``media``, By declaring the add attribute ``media``. ex: **media="all"**
 
-For simplicity and ease of orginazation, I put all of the theme's assets into a `` assets`` directory located at `` storefront/view/<theme_name>/``. Note: The path is started in the theme folder.
+For simplicity and ease of orginazation, I put all of the theme's assets into a ``assets`` directory located at ``storefront/view/<theme_name>/``. Note: The path is started in the theme folder.
 
 You should not delete files locate in  ``/javascript``, ``/stylesheet``
 Besides, we can include external URLs such as jquery, ... google fonts.
 
 **Asset (Path)**
 
-The files contained in the theme are started in the ``storefront/view/<theme_name>/`` directory, and the URL begins with a ``/ `` like the following:
+The files contained in the theme are started in the ``storefront/view/<theme_name>/`` directory, and the URL begins with a ``/`` like the following:
 
 ::
 
@@ -154,7 +154,7 @@ The files contained in the theme are started in the ``storefront/view/<theme_nam
 
 **Load asset on specific page**
 
-Sometimes you just want to load .css, js files at certain pages to avoid loading unnecessary files for the purpose of speeding up website display. For example, the image gallery is only used in the detailed product page, so you declare more the `<assets` tag as follows.
+Sometimes you just want to load .css, js files at certain pages to avoid loading unnecessary files for the purpose of speeding up website display. For example, the image gallery is only used in the detailed product page, so you declare more the ``<assets`` tag as follows.
 
 ::
 
@@ -203,6 +203,7 @@ Thư viện
 Vinacart built-in popular javascript/jquery libraries. For the sake of convenience, some libraries include multiple css & js files, which are difficult to manage when inserting files, and some libraries if you insert manually so they can using the same files that are duplicated. So the easiest way is to use the default library of vinacart (Note: you can also declare more libraries, if you want in your theme).
 
 Example: for bootstrap library.
+
 ::
 
 	<file type="lib">
@@ -215,6 +216,7 @@ By default it loads the files: bootstrap.min.css, bootstrap.min.js
 all js libraries declare in core/load-js-libs.php.
 
 You also write briefly as follows:
+
 ::
 	
 	<file type="lib"><![CDATA[ui/bootstrap]]></file>
@@ -287,7 +289,7 @@ To add a library, you write to the file ``core/config/library.php``
 Templates
 =========
 
-By default all pages will load in ``common/page.tpl`` so you will design all page in this file, but if you want to be more flexible by writing templates for different pages into Different files, we will declare more templates to the `` <templates`` tag.
+By default all pages will load in ``common/page.tpl`` so you will design all page in this file, but if you want to be more flexible by writing templates for different pages into Different files, we will declare more templates to the ``<templates`` tag.
 
 ::
 
@@ -503,6 +505,7 @@ Note: With each size created will create new images corresponding to that size, 
 You can also change the setting value in each parent position, by declaring the value in the ``<skin>`` tag.
 
 ::
+
 	<skin>
         <_AI_>
             <name><![CDATA[sb_flat]]></name>
@@ -530,6 +533,7 @@ Block Skin
 Inherit almost all current cms like wordpress, you can declare the sidebar params easily with vinacart. Set up in the configuration file (``theme.xml``)
 
 Declare the skins used for the theme:
+
 ::
 
 	<block_skins>
@@ -642,57 +646,3 @@ When placing blocks in two different positions they all show up in a file, eg: b
 	</skin>
 
 Note: ``<_AI_>`` stand for ``<__AUTO_INCREASE__>``
-
-Image Configuration
-===================
-
-- config_image_thumb_width|	config_image_thumb_height
-
-	+ thumb image for product page.
-
-- config_image_popup_width|	config_image_popup_height
-	
-	+ (listing_block) main image with media resource type for current object in page.
-	+ main image for product page.
-
-- config_image_product_width|config_image_product_height
-	
-	+ thumb image used in block: bestseller, featured, latest, special, listing_block (for product).
-	+ thumb for products listing in category|manufacturer|search|special page
-
-- config_image_additional_width|config_image_additional_height
-	
-	+ thumb image in block cart
-	+ additional thumb images in product page.
-
-- config_image_related_width|config_image_related_height
-	
-	+ main image for related products in product page.
-
-- config_image_cart_width|config_image_cart_height
-	
-	+ list product in account page: cart, download, invoice, wishlist, confirm, guest_step_3
-
-- config_image_grid_width|config_image_grid_height
-	
-	+ block manufacturer
-	+ image in manufacturer page.
-	+ list manufacturer images in product page.
-	+ (admin) in all grid list with image support.
-
-- config_image_category_width|config_image_category_height
-
-	+ block category, listing_block (for category)
-	+ list subcategories in category page.
-
-- config_image_manufacturer_width|config_image_manufacturer_height
-
-	+ listing_block (for manufacturer)
-
-*Conclusion*: 
-
-blocks: cart, category, bestseller (featured, latest, special), listing_block, manufacturer
-pages: 
-	single product
-	products listing page (category|manufacturer..)
-	account pages (cart, download, invoice, wishlist, confirm, guest_step_3)

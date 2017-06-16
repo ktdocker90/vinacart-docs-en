@@ -6,6 +6,7 @@ List of blocks you can use:
 
 - customer
 - menu
+- main_menu
 - search
 - language
 - currency

@@ -2,20 +2,17 @@
 Getting start
 =====================================
 
-Create a new theme named (eg: theme1) by duplicating * mytheme / *.
+Suppose that you download a theme called ``mytheme`` from abantecart marketplace (for VNC Theme framework). Create a new theme named (eg: theme1) by duplicating **mytheme/**.
 
 Rename file and folder
 ======================
 
-Note that after copying the theme, you need to rename the folder and file to match the new theme (theme1). Convert `` mytheme`` to `` theme1`` with the following files and folders:
+Note that after copying the theme, you need to rename the folder and file to match the new theme (theme1). Convert ``mytheme`` to ``theme1`` with the following files and folders:
 
 - admin/language/english/mytheme/
 - admin/language/english/mytheme/mytheme.xml
-- admin/language/vietnamese/mytheme/
-- admin/language/vietnamese/mytheme/mytheme.xml
 
 - storefront/language/english/mytheme
-- storefront/language/vietnamese/mytheme
 - storefront/view/mytheme
 
 Edit content
@@ -33,7 +30,6 @@ Find & rename ``mytheme`` to ``theme1`` in the file config.xml and main.php
 Language
 ^^^^^^^^
 - admin/language/english/theme1/theme1.xml
-- admin/language/vietnamese/theme1/theme1.xml
 
 Use language files for both admin & frontend.
 ::
@@ -48,7 +44,7 @@ Use language files for both admin & frontend.
 
 core/ThemeExtension.php
 ^^^^^^^^^^^^^^^^^^^^^^^
-This is entry file when the theme is loaded. In the file define class named `` Extension <theme_name> ``.
+This is entry file when the theme is loaded. In the file define class named ``Extension <theme_name>``.
 ex: mytheme -> ExtensionMytheme, theme1 -> ExtensionTheme1
 
 Edit the class name that matches your theme name.

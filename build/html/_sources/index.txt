@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Vinacart development theme
-==========================
+VNC Framework Documentation
+===========================
 
 This is a guide to VinaCart Ecommerce theme design for users and developers. This document covers many aspects related to setting up your store, as well as user interface development guidelines.
 
@@ -16,6 +16,7 @@ After reading this guide, you can easily use the VinaCart platform to set up you
 .. troubleshooting
 .. form
 .. build-tool
+.. global-config
 
 **Table of contents**:
 
@@ -26,8 +27,7 @@ After reading this guide, you can easily use the VinaCart platform to set up you
    cai-dat-vinacart
    vinacart-theme-structure
    getting-start
-   theme-config
-   global-config
+   theme-config   
    intro-layout-blocks
    template   
    FAQ

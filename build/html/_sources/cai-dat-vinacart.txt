@@ -2,7 +2,7 @@
 Vinacart Installation
 ==========================
 
-Download Vinacart: http://www.vinacart.net/p/download.html
+Homepage: http://www.vinacart.net/p/download.html
 
 Server Configuration
 --------------------
@@ -32,7 +32,7 @@ Install
 
 1. Prepare Domain.
 
-If run on localhost, you using xampp, wamp.. you need to create an alias (ie: ``vinacart.dev``) instead of using default hostname ``localhost``. Example:
+For Window user, you can using xampp, wamp.. If run on localhost, you can create an alias (ie: ``vinacart.dev``) (But this is not required) instead of using default hostname ``localhost``. Example:
 Edit file `c:/xampp/conf/extra/httpd-vhosts.conf`
 
 ::
